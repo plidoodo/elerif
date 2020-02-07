@@ -7,6 +7,9 @@ public class Contact {
 	private String telefonNr;
 	private String mejl;
 	
+	public Contact() {
+		
+	}
 	
 	public Contact(String namn, String mejl, String telefonNr) {
 		this.namn = namn;
