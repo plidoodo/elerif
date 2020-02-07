@@ -14,6 +14,14 @@ public class ContactBook {
 	public List<Contact> getContacts() {
 		return contacts;
 	}
+	
+	public String findContact(String namn) {
+		for (int i = 0; i < contacts.size(); i++) {
+			if (namn.equalsIgnoreCase(contacts.get(i).getNamn())) {
+				return "Följande kontakt hittades: \n" + contacts.get(i).toString();
+			} 
+		} return "Kontakt hittades inte";
+	}
 
 	public boolean addContactToList(Contact contact) {
 		if (findPosition(contact) >= 0) {
@@ -28,11 +36,6 @@ public class ContactBook {
 	private int findPosition(Contact contact) {
 		return this.contacts.indexOf(contact);
 
-	}
-
-	@Override
-	public String toString() {
-		return "ContactBook [contactList=" + contacts + "]";
 	}
 
 	public void printContactBook() {

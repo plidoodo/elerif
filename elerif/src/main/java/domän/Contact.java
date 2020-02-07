@@ -31,7 +31,7 @@ public class Contact {
 
 	@Override
 	public String toString() {
-		return "------------------------- \nnamn: " + namn + "\ntelnr: " + telefonNr + "\nmejl: " + mejl;
+		return "namn: " + namn + "\ntelnr: " + telefonNr + "\nmejl: " + mejl;
 	}
     
 
