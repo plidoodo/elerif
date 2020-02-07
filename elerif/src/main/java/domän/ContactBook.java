@@ -15,9 +15,8 @@ public class ContactBook {
 		return contacts;
 	}
 
-	
 	public boolean addContactToList(Contact contact) {
-		if(findPosition(contact) >= 0) {
+		if (findPosition(contact) >= 0) {
 			System.out.println("Kontakt finns redan");
 			return false;
 		} else {
@@ -25,21 +24,27 @@ public class ContactBook {
 		}
 		return true;
 	}
-	 private int findPosition(Contact contact) {
-		  return this.contacts.indexOf(contact);
 
-		 }
+	private int findPosition(Contact contact) {
+		return this.contacts.indexOf(contact);
+
+	}
 
 	@Override
 	public String toString() {
 		return "ContactBook [contactList=" + contacts + "]";
 	}
-	
-	
+
 	public void printContactBook() {
+		System.out.println("=============================");
 		for (int i = 0; i < contacts.size(); i++) {
-			System.out.println(contacts.indexOf(i));
+			System.out.println();
+			System.out.println("namn: " + getContacts().get(i).getNamn() + "\ntelnr: "
+					+ getContacts().get(i).getTelefonNr() + "\nmejl: " + getContacts().get(i).getMejl());
+			System.out.println();
+			System.out.println("=============================");
+			
 		}
 	}
-	
+
 }
