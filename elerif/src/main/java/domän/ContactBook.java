@@ -14,13 +14,14 @@ public class ContactBook {
 	public List<Contact> getContacts() {
 		return contacts;
 	}
-	
+
 	public String findContact(String namn) {
 		for (int i = 0; i < contacts.size(); i++) {
 			if (namn.equalsIgnoreCase(contacts.get(i).getNamn())) {
 				return "Följande kontakt hittades: \n" + contacts.get(i).toString();
-			} 
-		} return "Kontakt hittades inte";
+			}
+		}
+		return "Kontakt hittades inte";
 	}
 
 	public boolean addContactToList(Contact contact) {
@@ -33,9 +34,13 @@ public class ContactBook {
 		return true;
 	}
 
-	private int findPosition(Contact contact) {
-		return this.contacts.indexOf(contact);
-
+	public int findPosition(Contact contact) {
+		for (int i = 0; i < contacts.size(); i++) {
+			if (contact.getNamn().equals(contacts.get(i).getNamn())) {
+				return i;
+			}
+		}
+		return -1;
 	}
 
 	public void printContactBook() {
@@ -46,7 +51,7 @@ public class ContactBook {
 					+ getContacts().get(i).getTelefonNr() + "\nmejl: " + getContacts().get(i).getMejl());
 			System.out.println();
 			System.out.println("=============================");
-			
+
 		}
 	}
 

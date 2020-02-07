@@ -7,10 +7,12 @@ public class Contact {
 	private String telefonNr;
 	private String mejl;
 	
+	
 	public Contact(String namn, String mejl, String telefonNr) {
 		this.namn = namn;
 		this.mejl = mejl;
 		this.telefonNr = telefonNr;
+		
 	}
 
 	public String getNamn() {
@@ -33,6 +35,4 @@ public class Contact {
 	public String toString() {
 		return "namn: " + namn + "\ntelnr: " + telefonNr + "\nmejl: " + mejl;
 	}
-    
-
 }
