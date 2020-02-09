@@ -1,7 +1,6 @@
 package domän;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class ContactBook {
@@ -35,16 +34,6 @@ public class ContactBook {
 		return true;
 	}
 
-	public void deleteContact(String namn) {
-		for (int i = 0; i < contacts.size(); i++) {
-			if (namn.equalsIgnoreCase(contacts.get(i).getNamn())) {
-				contacts.remove(contacts.get(i));
-			} else {
-				System.out.println("Kontakt finns inte!");
-			}
-		}
-	}
-	
 	public int findPosition(Contact contact) {
 		for (int i = 0; i < contacts.size(); i++) {
 			if (contact.getNamn().equals(contacts.get(i).getNamn())) {
@@ -55,7 +44,7 @@ public class ContactBook {
 	}
 
 	public void printContactBook() {
-		sortContacts();
+		
 		System.out.println("=============================");
 		for (int i = 0; i < contacts.size(); i++) {
 			System.out.println();
@@ -65,9 +54,10 @@ public class ContactBook {
 			System.out.println("=============================");
 
 		}
-	}
-
-	public void sortContacts() {
-		Collections.sort(contacts, new CompareContactBook());
-	}
 }
+}
+
+	
+
+
+

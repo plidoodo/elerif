@@ -3,6 +3,7 @@ package main;
 
 import domän.Contact;
 import domän.ContactBook;
+import ui.Ui;
 
 public class Main {
 
@@ -14,6 +15,13 @@ public class Main {
 		cl.addContactToList(c.createContact("Elske", "elske@mejl.se", "073 455 67 88"));
 		cl.printContactBook();
 		System.out.println(cl.findContact("aoife"));
+		
+		Ui ui = new Ui();
+		
+		ui.userInterface();
+		ui.showEvent();
+		ui.show();
+		
 
 		
 	}
