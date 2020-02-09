@@ -1,6 +1,6 @@
 package domän;
 
-public class Contact {
+public class Contact implements Comparable<Contact> {
 	
 	ContactBook cb = new ContactBook();
 	private String namn;
@@ -37,5 +37,11 @@ public class Contact {
 	@Override
 	public String toString() {
 		return "namn: " + namn + "\ntelnr: " + telefonNr + "\nmejl: " + mejl;
+	}
+
+	@Override
+	public int compareTo(Contact b) {
+		Contact a = (Contact) b;
+		return getNamn().compareTo(a.getNamn());
 	}
 }

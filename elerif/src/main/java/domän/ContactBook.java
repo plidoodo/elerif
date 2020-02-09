@@ -1,6 +1,7 @@
 package domän;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ContactBook {
@@ -55,4 +56,7 @@ public class ContactBook {
 		}
 	}
 
+	public void sortContacts() {
+		Collections.sort(contacts, new CompareContactBook());
+	}
 }
