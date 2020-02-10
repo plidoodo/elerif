@@ -29,6 +29,10 @@ public class Main {
 		Lagring l = new Lagring();
 		l.addContactToFile(cl);
 		
+		for(Contact next: cl.getContacts()) {
+			System.out.println();
+			System.out.println(next.toString());
+		}
 
 
 	}
