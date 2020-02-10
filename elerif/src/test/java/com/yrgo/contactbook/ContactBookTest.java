@@ -1,11 +1,10 @@
 package com.yrgo.contactbook;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
 
 import domän.Contact;
 import domän.ContactBook;
@@ -23,13 +22,13 @@ public class ContactBookTest {
 		cl = new ContactBook();
 		boolean sizeContacts = cl.numberOfContacts() == 0;
 		
-		assertTrue("Arraylisten cl är tom", sizeContacts);
+		assertTrue(sizeContacts, "Arraylisten cl är tom");
 		
 		c = new Contact("Sara", "saar@mejl.se", "073 45 67 89");
 		cl.addContactToList(c.createContact("Sara", "saar@mejl.se", "073 45 67 89"));
 		boolean sizeAfterAdd = cl.numberOfContacts() == 1;
 		
-		assertTrue("Kontakten finns i listan, listan är inte tom mer", sizeAfterAdd);
+		assertTrue(sizeAfterAdd, "Kontakten finns i listan, listan är inte tom längre");
 	}		
 	
 	@Test
@@ -37,14 +36,16 @@ public class ContactBookTest {
 		cl = new ContactBook();
 		c = new Contact("Sara", "saar@mejl.se", "073 45 67 89");
 		cl.addContactToList(c.createContact("Sara", "saar@mejl.se", "073 45 67 89"));
+		
 		int sizeAfterAdd1 = cl.numberOfContacts();
 		
 		boolean addSameContactAgain = cl.addContactToList(c.createContact("Sara", "saar@mejl.se", "073 45 67 89")) == false;
-		int sizeAfterAdd2 = cl.numberOfContacts();
 		
+		int sizeAfterAdd2 = cl.numberOfContacts();
 		boolean sizeIsTheSame = sizeAfterAdd1 == sizeAfterAdd2;
-		assertTrue("Metoden returneras false om man lägger samma kontakt in igen", addSameContactAgain);
-		assertTrue("Storlek av ContactBook har inte ändrats", sizeIsTheSame);
+		
+		assertTrue(addSameContactAgain, "Metoden returneras false om man lägger samma kontakt in igen");
+		assertTrue(sizeIsTheSame, "Storlek av ContactBook har inte ändrats");
 			
 	}
 	
@@ -56,10 +57,10 @@ public class ContactBookTest {
 		cl.addContactToList(c.createContact("Sara", "saar@mejl.se", "073 45 67 89"));
 		
 		boolean contactFound = cl.findContact("Sara").getNamn().equals(c.getNamn());
-		assertTrue("Korrekta kontakt hittades", contactFound);
+		assertTrue(contactFound, "Korrekta kontakt hittades");
 		
 		contactFound = cl.findContact("saar@mejl.se").getMejl().equals(c.getMejl());
-		assertTrue("Korrekta kontakt hittades med mejl som parametern", contactFound);
+		assertTrue(contactFound, "Korrekta kontakt hittades med mejl som parametern");
 	}
 	
 	//Test för att se om findContact kastar ContactNotFoundException
