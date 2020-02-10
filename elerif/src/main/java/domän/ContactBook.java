@@ -76,20 +76,6 @@ public class ContactBook {
 			}
 		}
 	
-	//Metod för att skriva ut alla kontakter i listan. 
-	//Metod skall anropas för att skapa .txt filen
-	public void printContactBook() {
-		sortContacts();
-		System.out.println("=============================");
-		for (int i = 0; i < contacts.size(); i++) {
-			System.out.println();
-			System.out.println("namn: " + getContacts().get(i).getNamn() + "\ntelnr: "
-					+ getContacts().get(i).getTelefonNr() + "\nmejl: " + getContacts().get(i).getMejl());
-			System.out.println();
-			System.out.println("=============================");
-
-		}
-	}
 	
 	//Metod för att sortera listan alfabetisk'
 	//Metod anropas innan listan skrivas ut

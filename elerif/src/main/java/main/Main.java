@@ -18,7 +18,7 @@ public class Main {
 		} catch (Exception e) {
 			throw new ContactNotFoundException("Kontakt finns inte");
 		}
-		cl.printContactBook();
+
 	}
 
 }
