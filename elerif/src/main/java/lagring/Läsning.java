@@ -13,16 +13,15 @@ import domän.ContactBook;
 
 public class Läsning {
 	
-	private void loadAllContactsFromFile() throws IOException {
+	public void loadAllContactsFromFile(ContactBook cb) throws IOException {
 		File file = new File("src\\main\\resources\\contacts.txt");
-		ContactBook cb = new ContactBook();
 		Contact c = new Contact();
 		
 		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
 			String namn = null;
 			while ((namn = reader.readLine()) != null) {
 				cb.addContactToList(c.createContact(namn, reader.readLine(), reader.readLine()));
-				
+				reader.readLine();
 			}
 			
 			

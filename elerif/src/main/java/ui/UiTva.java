@@ -23,7 +23,7 @@ public class UiTva extends JFrame {
 	JButton cancel = new JButton("Cancel");
 	JButton search = new JButton("Save");
 	
-	JTextArea textArea = new JTextArea(10, 60);
+	JTextArea textArea = new JTextArea(40, 60);
 	
 	JScrollPane scrollPane = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
@@ -32,7 +32,7 @@ public class UiTva extends JFrame {
 	JLabel m = new JLabel("E-mail: ", SwingConstants.CENTER);
 	JTextField mejl = new JTextField(15);
 	JLabel t = new JLabel("Telefonnr: ", SwingConstants.CENTER);
-	JTextField telNr = new JTextField(15);
+	JTextField telNr = new JTextField("+46 ");
 	JLabel s = new JLabel("Sök: ", SwingConstants.CENTER);
 	JTextField searchField = new JTextField(15);
 	JLabel contacts = new JLabel("Hejsan hoppas jag heter ife och alla är mina vänner loL");
@@ -44,7 +44,8 @@ public class UiTva extends JFrame {
 		//Tab 1
 		JPanel tabOne = new JPanel();
 		tp.addTab("Add contact", tabOne);
-		tabOne.add(n); tabOne.add(namn); tabOne.add(m); tabOne.add(mejl); tabOne.add(t); tabOne.add(telNr);
+		tabOne.add(n); tabOne.add(namn); tabOne.add(m); tabOne.add(mejl); tabOne.add(t); 
+		tabOne.add(telNr);
 		tabOne.setLayout(new GridLayout(4, 4));
 		tabOne.add(save); tabOne.add(cancel);
 		
@@ -56,8 +57,8 @@ public class UiTva extends JFrame {
 		//Tab3
 		JPanel tabThree = new JPanel();
 		tp.addTab("Show contact list", tabThree);
-		tabThree.add(updateContact); tabThree.add(deleteContact); tabThree.add(contacts);
-		
+		tabThree.add(updateContact); tabThree.add(deleteContact); tabThree.add(scrollPane); 
+		tabThree.add(textArea);
 		
 		pack();
 		setSize(350, 350);
