@@ -27,7 +27,7 @@ public class Main {
 		ui.userInterface();
 		
 		Lagring l = new Lagring();
-		l.addContactToFile();
+		l.addContactToFile(cl);
 
 
 	}
