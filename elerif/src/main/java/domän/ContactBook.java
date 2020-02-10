@@ -33,13 +33,17 @@ public class ContactBook {
 
 	//Metoden för att hitta kontakten - mha namn
 		//Om namnen inte finns i listan, kommer metoden att skriva ut att kontakten inte finns
-		public String findContact(String namn) {
+		public Contact findContact(String input) throws Exception {
 			for (int i = 0; i < contacts.size(); i++) {
-				if (namn.equalsIgnoreCase(contacts.get(i).getNamn())) {
-					return "Följande kontakt hittades: \n" + contacts.get(i).toString();
+				if (input.equalsIgnoreCase(contacts.get(i).getNamn())) {
+					return contacts.get(i);
+				} else if (input.equalsIgnoreCase(contacts.get(i).getMejl())) {
+					return contacts.get(i);
+				} else if (input.equalsIgnoreCase(contacts.get(i).getTelefonNr())) {
+					return contacts.get(i);
 				}
 			}
-			return "Kontakt hittades inte";
+			throw new ContactNotFoundException("Kontakt finns inte");
 		}
 		
 	//Metoden för att uppdatera kontakten

@@ -33,17 +33,19 @@ public class ContactBookTest {
 		assertTrue("Kontakten finns i listan, listan är inte tom mer", sizeAfterAdd);
 	}
 	
-	@Test
-	public void findContactTest() {
-		ContactBookTest bt = new ContactBookTest();
-		c = new Contact("Sara", "saar@mejl.se", "073 45 67 89");
-		cl.addContactToList(c.createContact("Sara", "saar@mejl.se", "073 45 67 89"));
-		
-		boolean contactFound = cl.findContact("sara").equalsIgnoreCase("Följande kontakt hittades: \n"+ c.toString());
-		
-		assertTrue("Korrekta kontakt hittades", contactFound);
-	}
+	//Test för att se om findContact metoden fungerar som den borde
+//	@Test
+//	public void findContactTest() {
+//		ContactBookTest bt = new ContactBookTest();
+//		c = new Contact("Sara", "saar@mejl.se", "073 45 67 89");
+//		cl.addContactToList(c.createContact("Sara", "saar@mejl.se", "073 45 67 89"));
+//		
+//		boolean contactFound = cl.findContact("sara").equalsIgnoreCase("Följande kontakt hittades: \n"+ c.toString());
+//		
+//		assertTrue("Korrekta kontakt hittades", contactFound);
+//	}
 	
+	@Test
 	public void updateContactTest() {
 		
 	}
