@@ -9,15 +9,18 @@ import domän.Contact;
 import domän.ContactBook;
 
 public class Lagring {
+	
 
-	ContactBook cb = new ContactBook();
+	public void addContactToFile() {
 
-	private static File contacts = new File("src\\main\\resources\\contacts.txt");
-
-	private void addContactToFile(Contact contact) {
-
-		try (BufferedWriter writer = new BufferedWriter(new FileWriter(contacts, true))) {
-			writer.write(contact.getNamn() + "\r\n" + contact.getMejl() + "\r\n" + contact.getTelefonNr() + "\r\n\r\n");
+		File file = new File("src\\main\\resources\\contacts.txt");
+		ContactBook cb = new ContactBook();
+		try  {
+			BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+			for (int i = 0; i < cb.getContacts().size(); i++) {
+				writer.write(cb.getContacts().get(i).getNamn() + "\r\n" + cb.getContacts().get(i).getMejl() + "\r\n"
+						+ cb.getContacts().get(i).getTelefonNr() + "\r\n\r\n");
+			}
 		} catch (IOException e) {
 
 			e.printStackTrace();

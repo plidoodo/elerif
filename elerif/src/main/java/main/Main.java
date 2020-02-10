@@ -4,6 +4,7 @@ package main;
 import domän.Contact;
 import domän.ContactBook;
 import domän.ContactNotFoundException;
+import lagring.Lagring;
 import ui.UiTva;
 
 public class Main {
@@ -24,6 +25,10 @@ public class Main {
 		UiTva ui = new UiTva();
 		
 		ui.userInterface();
+		
+		Lagring l = new Lagring();
+		l.addContactToFile();
+
 
 	}
 
