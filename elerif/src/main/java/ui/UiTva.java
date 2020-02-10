@@ -28,7 +28,7 @@ public class UiTva extends JFrame {
 	JLabel t = new JLabel("Telefonnr: ", SwingConstants.CENTER);
 	JTextField telNr = new JTextField();
 	JLabel s = new JLabel("Sök: ", SwingConstants.CENTER);
-	JTextField searchField = new JTextField();
+	JTextField searchField = new JTextField(10);
 	
 	public void userInterface() {
 		JTabbedPane tp = new JTabbedPane();
@@ -50,7 +50,7 @@ public class UiTva extends JFrame {
 		JPanel tabThree = new JPanel();
 		tp.addTab("Show contact list", tabThree);
 		
-		setSize(400, 400);
+		setSize(350, 350);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
