@@ -7,6 +7,7 @@ public class Contact implements Comparable<Contact> {
 	
 	private String regExM = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";	
 	private String regExT = "^07[\\d]{1}-?[\\d]{7}$";
+	private String regExIT = "^\\+(?:[0-9] ?){6,14}[0-9]$";
 	private String namn;
 	private String telefonNr;
 	private String mejl;
@@ -19,8 +20,12 @@ public class Contact implements Comparable<Contact> {
 	// Konstruktorn med setters för namn, mejl och telefon
 	public Contact(String namn, String mejl, String telefonNr) {
 		this.namn = namn;
-		this.mejl = mejl;
-		this.telefonNr = telefonNr;
+		if (validator(mejl, regExM) == true || mejl.equals("")) {
+			this.mejl = mejl;	
+		}
+		if (validator(telefonNr, regExT) == true || validator(telefonNr, regExIT) == true || telefonNr.equals("")) {
+			this.telefonNr = telefonNr;	
+		}
 	}
 
 	// Getters
@@ -43,7 +48,6 @@ public class Contact implements Comparable<Contact> {
 
 		return new Contact(namn, mejl, telefonNr);
 	}
-
 
 	public boolean validator(String s, String regEx) {
    

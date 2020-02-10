@@ -28,6 +28,7 @@ public class Main {
 		
 		Lagring l = new Lagring();
 		l.addContactToFile(cl);
+		
 
 
 	}
