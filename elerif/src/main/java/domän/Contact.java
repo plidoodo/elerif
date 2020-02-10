@@ -42,7 +42,7 @@ public class Contact implements Comparable<Contact> {
     //Anropas när man vill skriva ut en viss kontakt
 	@Override
 	public String toString() {
-		return "namn: " + namn + "\ntelnr: " + telefonNr + "\nmejl: " + mejl;
+		return namn + "\n" + telefonNr + "\n" + mejl;
 	}
 
 	//Metod som gjor möjligt att jämföra kontakten med varandra
