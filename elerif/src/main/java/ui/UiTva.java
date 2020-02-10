@@ -6,12 +6,14 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 public class UiTva extends JFrame {
-	
+	JFrame frame = new JFrame("Contactbook");
 	JButton save = new JButton("Save changes");
 	JButton updateContact = new JButton("Update contact");
 	JButton deleteContact = new JButton("Delete contact");
@@ -20,15 +22,20 @@ public class UiTva extends JFrame {
 	JButton ok = new JButton("OK");
 	JButton cancel = new JButton("Cancel");
 	JButton search = new JButton("Save");
+	
+	JTextArea textArea = new JTextArea(10, 60);
+	
+	JScrollPane scrollPane = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
 	JLabel n = new JLabel("Name: ", SwingConstants.CENTER);
-	JTextField namn = new JTextField();
+	JTextField namn = new JTextField(15);
 	JLabel m = new JLabel("E-mail: ", SwingConstants.CENTER);
-	JTextField mejl = new JTextField();
+	JTextField mejl = new JTextField(15);
 	JLabel t = new JLabel("Telefonnr: ", SwingConstants.CENTER);
-	JTextField telNr = new JTextField();
+	JTextField telNr = new JTextField(15);
 	JLabel s = new JLabel("Sök: ", SwingConstants.CENTER);
-	JTextField searchField = new JTextField(10);
+	JTextField searchField = new JTextField(15);
+	JLabel contacts = new JLabel("Hejsan hoppas jag heter ife och alla är mina vänner loL");
 	
 	public void userInterface() {
 		JTabbedPane tp = new JTabbedPane();
@@ -49,12 +56,16 @@ public class UiTva extends JFrame {
 		//Tab3
 		JPanel tabThree = new JPanel();
 		tp.addTab("Show contact list", tabThree);
+		tabThree.add(updateContact); tabThree.add(deleteContact); tabThree.add(contacts);
 		
+		
+		pack();
 		setSize(350, 350);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 	}
+	
 	
 	
 
