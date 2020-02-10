@@ -153,18 +153,24 @@ public class Ui extends JFrame {
 		frame.getContentPane().setLayout(new GridLayout(1, 2));
 		
 		JLabel s = new JLabel("Sök: ", SwingConstants.CENTER);
-		JTextField search = new JTextField();
+		JTextField searchField = new JTextField();
 		
-		JButton search2 = new JButton("Save");
+		JButton search = new JButton("Save");
 		JButton cancel = new JButton("Cancel");
 		
-		search.setActionCommand(contactbook.findContact(getName()));
-		cancel.setActionCommand(null);
+		search.addActionListener(e -> {
+			pressAddContact();
+		});
+		
+		cancel.addActionListener(e -> {
+			pressAddContact();
+		});
+		
 		
 		panel.add(s);
-		panel.add(search);
+		panel.add(searchField);
 		panel.add(s);
-		panel.add(search2);
+		panel.add(search);
 		frame.setVisible(true);
 		
 		
@@ -174,7 +180,7 @@ public class Ui extends JFrame {
 		
 	}
 	public void pressShowList() {
-		String kon = contactbook.printContactBook();
+		
 		
 		panel = new JPanel();
 		panel.setLayout(new FlowLayout());
@@ -184,12 +190,36 @@ public class Ui extends JFrame {
 		frame.getContentPane().setLayout(new GridLayout());
 		
 		JTextArea k = new JTextArea();
+		contactbook.sortContacts();
+		for (Contact next:contactbook.getContacts()) {
+		k.setText(next.toString());
+		}
+		
 		k.setSize(200, 200);
-		k.setText(kon);
+		
 		
 		
 		
 	}
 	
+	
 }
 
+//Ui ui = new Ui();
+//
+//ui.userInterface();
+//ui.showEvent();
+//ui.show();
+
+
+//public String printContactBook() {
+//
+//StringBuilder coolstring = new StringBuilder();
+//for (int i = 0; i < contacts.size(); i++) {
+//coolstring.append("Namn: " + getContacts().get(i).getNamn());
+//coolstring.append("Telnr: " + getContacts().get(i).getTelefonNr());
+//coolstring.append("Mail: " + getContacts().get(i).getMejl());
+//
+//}
+//return coolstring.toString();
+//}

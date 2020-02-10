@@ -36,10 +36,23 @@ public class UiTva extends JFrame {
 		
 		//Tab 1
 		JPanel tabOne = new JPanel();
-		tp.addTab("addContact", tabOne);
+		tp.addTab("Add contact", tabOne);
 		tabOne.add(n); tabOne.add(namn); tabOne.add(m); tabOne.add(mejl); tabOne.add(t); tabOne.add(telNr);
 		tabOne.setLayout(new GridLayout(4, 4));
 		tabOne.add(save); tabOne.add(cancel);
+		
+		//Tab2
+		JPanel tabTwo = new JPanel();
+		tp.addTab("Search contact", tabTwo);
+		tabTwo.add(s); tabTwo.add(searchField);
+		
+		//Tab3
+		JPanel tabThree = new JPanel();
+		tp.addTab("Show contact list", tabThree);
+		
+		setSize(400, 400);
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 	}
 	

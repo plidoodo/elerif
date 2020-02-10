@@ -4,6 +4,7 @@ package main;
 import domän.Contact;
 import domän.ContactBook;
 import domän.ContactNotFoundException;
+import ui.UiTva;
 
 public class Main {
 
@@ -17,7 +18,12 @@ public class Main {
 			System.out.println(cl.findContact("aoife").toString());
 		} catch (Exception e) {
 			throw new ContactNotFoundException("Kontakt finns inte");
+			
+			
 		}
+		UiTva ui = new UiTva();
+		
+		ui.userInterface();
 
 	}
 
