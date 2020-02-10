@@ -37,6 +37,7 @@ public class ContactBook {
 			return false;
 		} else {
 			contacts.add(contact);
+			
 		}
 		return true;
 	}
@@ -77,7 +78,7 @@ public class ContactBook {
 		}
 	
 	
-	//Metod för att sortera listan alfabetiskt
+	//Metod för att sortera listan alfabetisk'
 	//Metod anropas innan listan skrivas ut
 	public void sortContacts() {
 		Collections.sort(contacts, new CompareContactBook());
