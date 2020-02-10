@@ -4,11 +4,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Contact implements Comparable<Contact> {
-	
-	private String regExM = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";	
-	private String regExT = "^07[\\d]{1}-?[\\d]{7}$";
+
+	private String regExM = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
 	private String regExTM = "^\\+?(?:\\s*\\d){10}\\s*$";
 	private String regExIT = "^\\+(?:[0-9] ?){6,14}[0-9]$";
+
 	private String namn;
 	private String telefonNr;
 	private String mejl;
@@ -22,10 +22,11 @@ public class Contact implements Comparable<Contact> {
 	public Contact(String namn, String mejl, String telefonNr) {
 		this.namn = namn;
 		if (validator(mejl, regExM) == true || mejl.equals("")) {
-			this.mejl = mejl;	
+			this.mejl = mejl;
 		}
-		if (validator(telefonNr, regExT) == true || validator(telefonNr, regExIT) == true || validator(telefonNr, regExTM) == true || telefonNr.equals("")) {
-			this.telefonNr = telefonNr;	
+		if (validator(telefonNr, regExIT) == true
+				|| validator(telefonNr, regExTM) == true || telefonNr.equals("")) {
+			this.telefonNr = telefonNr;
 		}
 	}
 
@@ -50,8 +51,10 @@ public class Contact implements Comparable<Contact> {
 		return new Contact(namn, mejl, telefonNr);
 	}
 
+	//Hjälpmetod för att kontrolera om mejl och telefonnummer har korrekta format
+	//Metoden fugerar mha regular expressions, och pattern & matcher
 	public boolean validator(String s, String regEx) {
-   
+
 		Pattern pattern = Pattern.compile(regEx);
 		Matcher matcher;
 		matcher = pattern.matcher(s);
@@ -61,7 +64,7 @@ public class Contact implements Comparable<Contact> {
 		} else {
 			return false;
 		}
-    }
+	}
 
 	// To String metod för kontakten
 	// Anropas när man vill skriva ut en viss kontakt

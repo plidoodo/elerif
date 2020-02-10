@@ -16,7 +16,7 @@ public class Main {
 		cl.addContactToList(c.createContact("Aoife", "aoife@mejl.se", "+46 123 456 78"));
 		cl.addContactToList(c.createContact("Elske", "elske@mejl.se", "073 455 67 88"));
 		try {
-			System.out.println(cl.findContact("aoife").toString());
+			System.out.println(cl.findContact("elske").toString());
 		} catch (Exception e) {
 			throw new ContactNotFoundException("Kontakt finns inte");
 			

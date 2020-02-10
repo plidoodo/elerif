@@ -59,11 +59,11 @@ public class ContactBook {
 		
 	//Metoden för att uppdatera kontakten
 	//metoden placeras uppdaterade kontakten på samma plats i listan
-	public void updateContact(Contact a, Contact b) {
+	public void updateContact(Contact a, Contact b) throws Exception {
 		if (findPosition(a) >= 0) {
 				contacts.set(findPosition(a), b);	
 			} else {
-				System.out.println("Kontakt finns inte!");
+				throw new ContactNotFoundException("Kontakt finns inte!");
 			}
 		}
 	
