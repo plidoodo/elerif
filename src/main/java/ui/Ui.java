@@ -13,8 +13,8 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import domän.Contact;
-import domän.ContactBook;
+import doman.Contact;
+import doman.ContactBook;
 
 
 public class Ui extends JFrame {

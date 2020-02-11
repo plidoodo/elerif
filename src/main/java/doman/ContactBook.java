@@ -1,4 +1,4 @@
-package domän;
+package doman;
 
 import java.util.ArrayList;
 import java.util.Collections;

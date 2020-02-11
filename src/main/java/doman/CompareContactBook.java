@@ -1,4 +1,4 @@
-package domän;
+package doman;
 
 import java.util.Comparator;
 

@@ -6,8 +6,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import domän.Contact;
-import domän.ContactBook;
+import doman.Contact;
+import doman.ContactBook;
 
 public class Lagring {
 	

@@ -1,9 +1,9 @@
 package main;
 
 
-import domän.Contact;
-import domän.ContactBook;
-import domän.ContactNotFoundException;
+import doman.Contact;
+import doman.ContactBook;
+import doman.ContactNotFoundException;
 import lagring.Lagring;
 import ui.UiTva;
 

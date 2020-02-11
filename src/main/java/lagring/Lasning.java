@@ -8,10 +8,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import domän.Contact;
-import domän.ContactBook;	
+import doman.Contact;
+import doman.ContactBook;	
 
-public class Läsning {
+public class Lasning {
 	
 	public void loadAllContactsFromFile(ContactBook cb) throws IOException {
 		File file = new File("src\\main\\resources\\contacts.txt");

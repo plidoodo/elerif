@@ -6,9 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-import domän.Contact;
-import domän.ContactBook;
-import domän.ContactNotFoundException;
+import doman.Contact;
+import doman.ContactBook;
+import doman.ContactNotFoundException;
 
 public class ContactBookTest {
 	

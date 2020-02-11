@@ -1,4 +1,4 @@
-package domän;
+package doman;
 
 public class ContactNotFoundException extends Exception	 {
 	/**

@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-import domän.Contact;
+import doman.Contact;
 
 public class ContactTest {
 	private Contact a;
