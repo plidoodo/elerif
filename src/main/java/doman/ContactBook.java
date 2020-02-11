@@ -37,7 +37,7 @@ public class ContactBook {
 			return false;
 		} else {
 			contacts.add(contact);
-			
+			sortContacts();
 		}
 		return true;
 	}
