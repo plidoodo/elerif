@@ -1,6 +1,8 @@
 package ui;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,6 +13,8 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+
+import doman.ContactBook;
 
 public class UiTva extends JFrame {
 	JFrame frame = new JFrame("Contactbook");
@@ -33,9 +37,11 @@ public class UiTva extends JFrame {
 	JTextField mejl = new JTextField(15);
 	JLabel t = new JLabel("Telefonnr: ", SwingConstants.CENTER);
 	JTextField telNr = new JTextField("+46 ");
-	JLabel s = new JLabel("Sök: ", SwingConstants.CENTER);
+	JLabel s = new JLabel("Search: ", SwingConstants.CENTER);
 	JTextField searchField = new JTextField(15);
-	JLabel contacts = new JLabel("Hejsan hoppas jag heter ife och alla är mina vänner loL");
+	JLabel contacts = new JLabel("Hejsan hoppas jag heter ife och alla Ã¤r mina vÃ¤nner loL");
+	
+	ContactBook contactbook = new ContactBook();
 	
 	public void userInterface() {
 		JTabbedPane tp = new JTabbedPane();
@@ -67,7 +73,14 @@ public class UiTva extends JFrame {
 		
 	}
 	
+	private class ButtonListener implements ActionListener {
+
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+	        e.getActionCommand();	        
+	    }
 	
 	
 
+}
 }
