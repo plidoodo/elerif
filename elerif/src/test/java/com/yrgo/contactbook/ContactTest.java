@@ -47,9 +47,9 @@ public class ContactTest {
 		validate = a.validator("073 123 45 67", regExTM);
 		assertTrue(validate, "Andra mönster av korrekta telefonnummerformat kommer att returnerar true");
 		
-		a = new Contact("Anna", "anna-mejl-se", "073 123 45 67");
-		a.createContact("Anna", "anna-mejl-se", "073 123 45 67");
-		validate = a.validator("073 123 45 67", regExTM);
+		a = new Contact("Anna", "anna-mejl-se", "073 123 4567");
+		a.createContact("Anna", "anna-mejl-se", "073 123 4567");
+		validate = a.validator("073 123 4567", regExTM);
 		assertTrue(validate, "Andra mönster av korrekta telefonnummerformat kommer att returnerar true");
 		
 		a = new Contact("Anna", "anna-mejl-se", "073 1234567");
