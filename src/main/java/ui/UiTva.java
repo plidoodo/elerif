@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
@@ -14,6 +15,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import doman.Contact;
 import doman.ContactBook;
 
 public class UiTva extends JFrame {
@@ -25,7 +27,8 @@ public class UiTva extends JFrame {
 	JButton showList = new JButton("Show contact list");
 	JButton ok = new JButton("OK");
 	JButton cancel = new JButton("Cancel");
-	JButton search = new JButton("Save");
+	JButton search = new JButton("Search");
+	
 	
 	JTextArea textArea = new JTextArea(40, 60);
 	
@@ -36,7 +39,7 @@ public class UiTva extends JFrame {
 	JLabel m = new JLabel("E-mail: ", SwingConstants.CENTER);
 	JTextField mejl = new JTextField(15);
 	JLabel t = new JLabel("Telefonnr: ", SwingConstants.CENTER);
-	JTextField telNr = new JTextField("+46 ");
+	JTextField telNr = new JTextField();
 	JLabel s = new JLabel("Search: ", SwingConstants.CENTER);
 	JTextField searchField = new JTextField(15);
 	JLabel contacts = new JLabel("Hejsan hoppas jag heter ife och alla Ã¤r mina vÃ¤nner loL");
@@ -44,6 +47,7 @@ public class UiTva extends JFrame {
 	ContactBook contactbook = new ContactBook();
 	
 	public void userInterface() {
+		Contact c = new Contact();
 		JTabbedPane tp = new JTabbedPane();
 		add(tp);
 		
@@ -55,10 +59,25 @@ public class UiTva extends JFrame {
 		tabOne.setLayout(new GridLayout(4, 4));
 		tabOne.add(save); tabOne.add(cancel);
 		
+		save.addActionListener(e -> {
+			contactbook.addContactToList(c.createContact(namn.getText(), mejl.getText(), telNr.getText()));
+			JOptionPane.showMessageDialog(null, "Contact added");
+		});
+		
+		cancel.addActionListener(e -> {
+			dispose();
+		});
+		
 		//Tab2
 		JPanel tabTwo = new JPanel();
 		tp.addTab("Search contact", tabTwo);
 		tabTwo.add(s); tabTwo.add(searchField);
+		tabTwo.add(search);
+		
+		search.addActionListener(e -> {
+			
+			
+		});
 		
 		//Tab3
 		JPanel tabThree = new JPanel();
