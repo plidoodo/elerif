@@ -28,9 +28,11 @@ public class UiTva extends JFrame {
 	JButton ok = new JButton("OK");
 	JButton cancel = new JButton("Cancel");
 	JButton search = new JButton("Search");
+	JLabel textArea = new JLabel();
 	
 	
-	JTextArea textArea = new JTextArea(40, 60);
+//	JTextArea textArea = new JTextArea(40, 60);
+	JTextArea displayContacts = new JTextArea(40, 60);
 	
 	JScrollPane scrollPane = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
@@ -45,6 +47,7 @@ public class UiTva extends JFrame {
 	JLabel contacts = new JLabel("Hejsan hoppas jag heter ife och alla Ã¤r mina vÃ¤nner loL");
 	
 	ContactBook contactbook = new ContactBook();
+	
 	
 	public void userInterface() {
 		Contact c = new Contact();
@@ -72,14 +75,18 @@ public class UiTva extends JFrame {
 		JPanel tabTwo = new JPanel();
 		tp.addTab("Search contact", tabTwo);
 		tabTwo.add(s); tabTwo.add(searchField);
-		tabTwo.add(search);
+		tabTwo.add(search); tabTwo.add(displayContacts);
 		
-		search.addActionListener(e -> {
-			
-			
-		});
+//		search.addActionListener(e -> {
+//			searchField.getText();
+//			displayContacts.setText(contactbook.findContact(c);
+//			
+//			
+//		});
 		
 		//Tab3
+		
+		textArea.setText(contactbook.printContactBook());
 		JPanel tabThree = new JPanel();
 		tp.addTab("Show contact list", tabThree);
 		tabThree.add(updateContact); tabThree.add(deleteContact); tabThree.add(scrollPane); 
@@ -102,4 +109,5 @@ public class UiTva extends JFrame {
 	
 
 }
+
 }

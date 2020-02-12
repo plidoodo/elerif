@@ -88,6 +88,18 @@ public class ContactBook {
 	public int numberOfContacts() {
 		return contacts.size();
 	}
+	
+	public String printContactBook() {
+
+		StringBuilder coolstring = new StringBuilder();
+		for (int i = 0; i < contacts.size(); i++) {
+		coolstring.append("Namn: " + getContacts().get(i).getNamn());
+		coolstring.append("Telnr: " + getContacts().get(i).getTelefonNr());
+		coolstring.append("Mail: " + getContacts().get(i).getMejl());
+
+		}
+		return coolstring.toString();
+}
 }
 
 
