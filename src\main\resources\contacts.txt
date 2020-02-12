@@ -1,12 +1,15 @@
-Aoife
-+46 123 456 78
-aoife@mejl.se
+Namn: Aoife
+Telnr: +46 123 456 78
+Mail: aoife@mejl.se
 
-Elske
-073 455 67 88
-elske@mejl.se
 
-någon annan
-+31 63922880
+Namn: Elske
+Telnr: 073 455 67 88
+Mail: elske@mejl.se
+
+
+Namn: någon annan
+Telnr: +31 63922880
+Mail: 
 
 
