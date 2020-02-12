@@ -88,5 +88,20 @@ public class ContactBookTest {
 		boolean updated = cl.findContact("Sara").getMejl().equals("sara@mejl.se") && cl.findContact("Sara").getTelefonNr().equals("073 450 67 99");
 		assertTrue(updated, "Kontakt blev uppdaterat med korrekta mejl och telefonnummer");
 	}
+	
+	@Test
+	public void deleteContactTest() {
+		cl = new ContactBook();
+
+		c = new Contact("Sara", "saar@mejl.se", "073 450 67 89");
+		cl.addContactToList(c.createContact("Sara", "saar@mejl.se", "073 450 67 89"));
+		int afterAdd = cl.numberOfContacts();
+		
+		cl.deleteContact(c);
+		int afterDelete = cl.numberOfContacts();
+		
+		boolean deleted = afterAdd == afterDelete +1;
+		assertTrue(deleted, "Kontakt blev borttagen från ContactBook");
+	}
 
 }
