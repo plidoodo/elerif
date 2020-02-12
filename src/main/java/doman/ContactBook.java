@@ -89,15 +89,11 @@ public class ContactBook {
 		return contacts.size();
 	}
 
-	public String printContactBook() {
+	public void printContactBook() {
 
-		StringBuilder coolstring = new StringBuilder();
-		for (int i = 0; i < contacts.size(); i++) {
-			coolstring.append("Namn: " + getContacts().get(i).getNamn());
-			coolstring.append("Telnr: " + getContacts().get(i).getTelefonNr());
-			coolstring.append("Mail: " + getContacts().get(i).getMejl());
-
+		for(Contact next: contacts) {
+			getContacts().toString();
 		}
-		return coolstring.toString();
+
 	}
 }

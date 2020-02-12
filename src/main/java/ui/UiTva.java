@@ -1,8 +1,11 @@
 package ui;
 
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,6 +20,7 @@ import javax.swing.SwingConstants;
 
 import doman.Contact;
 import doman.ContactBook;
+import lagring.Lasning;
 
 public class UiTva extends JFrame {
 	JFrame frame = new JFrame("Contactbook");
@@ -28,13 +32,13 @@ public class UiTva extends JFrame {
 	JButton ok = new JButton("OK");
 	JButton cancel = new JButton("Cancel");
 	JButton search = new JButton("Search");
-	JLabel textArea = new JLabel();
-	
-	
+	JTextArea textArea = new JTextArea(200, 200);
+
 //	JTextArea textArea = new JTextArea(40, 60);
 	JTextArea displayContacts = new JTextArea(40, 60);
-	
-	JScrollPane scrollPane = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+
+	JScrollPane scrollPane = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+			JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
 	JLabel n = new JLabel("Name: ", SwingConstants.CENTER);
 	JTextField namn = new JTextField(15);
@@ -45,69 +49,87 @@ public class UiTva extends JFrame {
 	JLabel s = new JLabel("Search: ", SwingConstants.CENTER);
 	JTextField searchField = new JTextField(15);
 	JLabel contacts = new JLabel("Hejsan hoppas jag heter ife och alla Ã¤r mina vÃ¤nner loL");
-	
+
 	ContactBook contactbook = new ContactBook();
+	Lasning lasning = new Lasning();
 	
-	
+
 	public void userInterface() {
 		Contact c = new Contact();
 		JTabbedPane tp = new JTabbedPane();
 		add(tp);
-		
-		//Tab 1
+
+		// Tab 1
 		JPanel tabOne = new JPanel();
 		tp.addTab("Add contact", tabOne);
-		tabOne.add(n); tabOne.add(namn); tabOne.add(m); tabOne.add(mejl); tabOne.add(t); 
+		tabOne.add(n);
+		tabOne.add(namn);
+		tabOne.add(m);
+		tabOne.add(mejl);
+		tabOne.add(t);
 		tabOne.add(telNr);
 		tabOne.setLayout(new GridLayout(4, 4));
-		tabOne.add(save); tabOne.add(cancel);
-		
+		tabOne.add(save);
+		tabOne.add(cancel);
+
 		save.addActionListener(e -> {
 			contactbook.addContactToList(c.createContact(namn.getText(), mejl.getText(), telNr.getText()));
 			JOptionPane.showMessageDialog(null, "Contact added");
 		});
-		
+
 		cancel.addActionListener(e -> {
 			dispose();
 		});
-		
-		//Tab2
+
+		// Tab2
 		JPanel tabTwo = new JPanel();
 		tp.addTab("Search contact", tabTwo);
-		tabTwo.add(s); tabTwo.add(searchField);
-		tabTwo.add(search); tabTwo.add(displayContacts);
-		
+		tabTwo.add(s);
+		tabTwo.add(searchField);
+		tabTwo.add(search);
+		tabTwo.add(displayContacts);
+
 //		search.addActionListener(e -> {
 //			searchField.getText();
 //			displayContacts.setText(contactbook.findContact(c);
 //			
 //			
 //		});
-		
-		//Tab3
-		
-		textArea.setText(contactbook.printContactBook());
+
+		// Tab3
+		try {
+			lasning.loadAllContactsFromFile(contactbook);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		JPanel tabThree = new JPanel();
+		tabThree.setLayout(new FlowLayout());
+
+		for (Contact next : contactbook.getContacts()) {
+			textArea.append(next.toString());
+		}
+
 		tp.addTab("Show contact list", tabThree);
-		tabThree.add(updateContact); tabThree.add(deleteContact); tabThree.add(scrollPane); 
-		tabThree.add(textArea);
-		
+		tabThree.add(updateContact);
+		tabThree.add(deleteContact);
+		tabThree.add(scrollPane);
+		tabThree.add(textArea, BorderLayout.CENTER);
+
 		pack();
 		setSize(350, 350);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
+
 	}
-	
+
 	private class ButtonListener implements ActionListener {
 
-	    @Override
-	    public void actionPerformed(ActionEvent e) {
-	        e.getActionCommand();	        
-	    }
-	
-	
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			e.getActionCommand();
+		}
 
-}
+	}
 
 }
