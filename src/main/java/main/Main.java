@@ -1,6 +1,5 @@
 package main;
 
-
 import java.io.IOException;
 
 import doman.Contact;
@@ -37,7 +36,7 @@ public class Main {
 //		
 		ContactBook n = new ContactBook();
 		Contact c = new Contact();
-		n.addContactToList(c.createContact("någon annan", "", "+31 63922880"));
+		n.addContactToList(c.createContact("Erik", "kalaspuff@mejl.se", "+31 63922880"));
 		n.addContactToList(c.createContact("Aoife", "aoife@mejl.se", "+46 123 456 78"));
 		n.addContactToList(c.createContact("Elske", "elske@mejl.se", "073 455 67 88"));
 		Lagring lg = new Lagring();
@@ -45,17 +44,12 @@ public class Main {
 
 		Lasning ls = new Lasning();
 		ls.loadFromFile(n.getContacts());
-		
-		for(Contact next: n.getContacts()) {
+
+		for (Contact next : n.getContacts()) {
 			System.out.println(next.toString());
 			System.out.println();
 		}
-//		for (Contact contact: n.getContacts()) {
-//			System.out.println(contact.toString());
-//		}
-		
 
-		
 	}
 
 }
