@@ -12,7 +12,7 @@ import ui.UiTva;
 
 public class Main {
 
-	public static void main(String[] args) throws ContactNotFoundException, IOException {
+	public static void main(String[] args) throws Exception {
 //		Contact c = new Contact();
 //		ContactBook cl = new ContactBook();
 //		cl.addContactToList(c.createContact("någon annan", "", "+31 63922880"));
@@ -36,6 +36,15 @@ public class Main {
 //		
 //		
 		ContactBook n = new ContactBook();
+		Contact c = new Contact();
+		n.addContactToList(c.createContact("någon annan", "", "+31 63922880"));
+		n.addContactToList(c.createContact("Aoife", "aoife@mejl.se", "+46 123 456 78"));
+		n.addContactToList(c.createContact("Elske", "elske@mejl.se", "073 455 67 88"));
+		Lagring lg = new Lagring();
+		lg.addContactToFile(n);
+		n.deleteContact(n.findContact("Aoife"));
+		n.deleteContact(n.findContact("Elske"));
+		n.deleteContact(n.findContact("någon annan"));
 		Lasning l = new Lasning();
 		l.loadAllContactsFromFile(n);
 		for(Contact next: n.getContacts()) {
