@@ -2,6 +2,7 @@ package lagring;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -40,7 +41,11 @@ public class Lagring {
 			oos.close();
 			fos.close();
 			
-		} catch (IOException e) {
+		}
+		catch (FileNotFoundException fne) {
+			fne.printStackTrace();
+		}
+		catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
