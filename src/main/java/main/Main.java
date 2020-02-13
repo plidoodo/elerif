@@ -46,7 +46,13 @@ public class Main {
 		n.deleteContact(n.findContact("Elske"));
 		n.deleteContact(n.findContact("någon annan"));
 		Lasning l = new Lasning();
-		l.loadAllContactsFromFile(n);
+		try {
+			l.loadAllContactsFromFile(n);
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		
 		for(Contact next: n.getContacts()) {
 			System.out.println(next.toString());
 			System.out.println();

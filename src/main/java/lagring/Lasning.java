@@ -20,7 +20,7 @@ public class Lasning {
 		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
 			String namn = null;
 			while ((namn = reader.readLine()) != null) {
-				cb.addContactToList(c.createContact(namn, reader.readLine(), reader.readLine()));
+				cb.addContactToList(c.createContact(namn.trim(), reader.readLine().trim(), reader.readLine().trim()));
 				reader.readLine();
 			}
 			
