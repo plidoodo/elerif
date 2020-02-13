@@ -41,22 +41,19 @@ public class Main {
 		n.addContactToList(c.createContact("Aoife", "aoife@mejl.se", "+46 123 456 78"));
 		n.addContactToList(c.createContact("Elske", "elske@mejl.se", "073 455 67 88"));
 		Lagring lg = new Lagring();
-		lg.addContactToFile(n);
-		n.deleteContact(n.findContact("Aoife"));
-		n.deleteContact(n.findContact("Elske"));
-		n.deleteContact(n.findContact("någon annan"));
-		Lasning l = new Lasning();
-		try {
-			l.loadAllContactsFromFile(n);
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-		}
+		lg.addToFile(n);
+
+		Lasning ls = new Lasning();
+		ls.loadFromFile(n.getContacts());
 		
 		for(Contact next: n.getContacts()) {
 			System.out.println(next.toString());
 			System.out.println();
 		}
+//		for (Contact contact: n.getContacts()) {
+//			System.out.println(contact.toString());
+//		}
+		
 
 		
 	}

@@ -1,10 +1,15 @@
 package doman;
 
+import java.io.Serializable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Contact implements Comparable<Contact> {
+public class Contact implements Comparable<Contact>, Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4974590843159827871L;
 	private String regExM = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
 	private String regExTM = "^\\+?(?:\\s*\\d){10}\\s*$";
 	private String regExIT = "^\\+(?:[0-9] ?){6,14}[0-9]$";
