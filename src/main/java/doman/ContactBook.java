@@ -4,13 +4,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import lagring.Lasning;
+
 public class ContactBook {
 
 	private List<Contact> contacts = new ArrayList<>();
 
 	// Konstruktorn
 	public ContactBook() {
-		this.contacts = new ArrayList<Contact>();
+		Lasning s = new Lasning();
+		this.contacts = s.loadFromFile();
 	}
 
 	// Getter
