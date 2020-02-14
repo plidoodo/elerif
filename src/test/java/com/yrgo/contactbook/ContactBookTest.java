@@ -20,6 +20,7 @@ public class ContactBookTest {
 	@Test
 	public void addContactTest() {
 		cl = new ContactBook();
+		cl.getContacts().clear();
 		boolean sizeContacts = cl.numberOfContacts() == 0;
 
 		assertTrue(sizeContacts, "Arraylisten cl är tom");
@@ -34,6 +35,7 @@ public class ContactBookTest {
 	@Test
 	public void addDoubleContactTest() {
 		cl = new ContactBook();
+		cl.getContacts().clear();
 		c = new Contact("Sara", "saar@mejl.se", "073 45 67 89");
 		cl.addContactToList(c.createContact("Sara", "saar@mejl.se", "073 45 67 89"));
 
@@ -68,6 +70,7 @@ public class ContactBookTest {
 	@Test
 	public void ExceptionTest() {
 		cl = new ContactBook();
+		cl.getContacts().clear();
 		c = new Contact("Sara", "saar@mejl.se", "073 45 67 89");
 		cl.addContactToList(c.createContact("Sara", "saar@mejl.se", "073 45 67 89"));
 		assertThrows(ContactNotFoundException.class, () -> {
@@ -80,6 +83,7 @@ public class ContactBookTest {
 	@Test
 	public void updateContactTest() throws Exception {
 		cl = new ContactBook();
+		cl.getContacts().clear();
 
 		c = new Contact("Sara", "saar@mejl.se", "073 450 67 89");
 		cl.addContactToList(c.createContact("Sara", "saar@mejl.se", "073 450 67 89"));
@@ -98,6 +102,7 @@ public class ContactBookTest {
 	@Test
 	public void deleteContactTest() {
 		cl = new ContactBook();
+		cl.getContacts().clear();
 
 		c = new Contact("Sara", "saar@mejl.se", "073 450 67 89");
 		cl.addContactToList(c.createContact("Sara", "saar@mejl.se", "073 450 67 89"));
@@ -115,6 +120,7 @@ public class ContactBookTest {
 	@Test
 	public void sortContactsTest() {
 		cl = new ContactBook();
+		cl.getContacts().clear();
 
 		c = new Contact("Sara", "saar@mejl.se", "073 450 67 89");
 		cl.addContactToList(c.createContact("Sara", "saar@mejl.se", "073 450 67 89"));
