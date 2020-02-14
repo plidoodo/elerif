@@ -28,11 +28,6 @@ public class Main {
 //		l.addContactToFile(cl);
 //		
 //		
-		ContactBook n = new ContactBook();
-		for (Contact next: n.getContacts()) {
-			System.out.println(next.toString());
-			System.out.println();
-		}
 
 //		n.addContactToList(new Contact("Erik", "kalaspuff@mejl.se", "+31 63922880"));
 //		n.addContactToList(new Contact("Aoife", "aoife@mejl.se", "+46 123 456 78"));
