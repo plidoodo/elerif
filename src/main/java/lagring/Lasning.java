@@ -35,9 +35,9 @@ public class Lasning {
 
 	}
 	
-	public void loadFromFile(List<Contact> contacts) {
+	public List<Contact> loadFromFile() {
 		
-		
+		List<Contact> contacts = new ArrayList<>();
 		try
         {
             FileInputStream fis = new FileInputStream("src\\\\main\\\\resources\\\\contact.txt");
@@ -60,11 +60,7 @@ public class Lasning {
             System.out.println("Class not found");
             c.printStackTrace();
         }
-		
-		for (Contact next : contacts) {
-			System.out.println(next.toString());
-			System.out.println();
-		}
+		return contacts;
 	}
 	
 

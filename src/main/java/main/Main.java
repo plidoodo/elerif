@@ -48,7 +48,8 @@ public class Main {
 //		n.deleteContact(n.findContact("Elske"));
 		
 		Lasning ls = new Lasning();
-		ls.loadFromFile(n.getContacts());
+		
+		
 		
 		
 		
