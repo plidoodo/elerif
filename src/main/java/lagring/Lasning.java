@@ -40,7 +40,7 @@ public class Lasning {
 		List<Contact> contacts = new ArrayList<>();
 		try
         {
-            FileInputStream fis = new FileInputStream("src\\\\main\\\\resources\\\\contact.txt");
+            FileInputStream fis = new FileInputStream("src//main//resources//contact.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
  
             contacts = (List<Contact>) ois.readObject();

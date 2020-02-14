@@ -51,7 +51,6 @@ public class UiTva extends JFrame {
 	JLabel contacts = new JLabel("Hejsan hoppas jag heter ife och alla Ã¤r mina vÃ¤nner loL");
 
 	ContactBook contactbook = new ContactBook();
-	Lasning lasning = new Lasning();
 	
 
 	public void userInterface() {
@@ -97,12 +96,7 @@ public class UiTva extends JFrame {
 //		});
 
 		// Tab3
-		try {
-			lasning.loadAllContactsFromFile(contactbook);
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+
 		JPanel tabThree = new JPanel();
 		tabThree.setLayout(new FlowLayout());
 

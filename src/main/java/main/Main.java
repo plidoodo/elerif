@@ -1,15 +1,7 @@
 package main;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 import doman.Contact;
 import doman.ContactBook;
-import doman.ContactNotFoundException;
-import lagring.Lagring;
-import lagring.Lasning;
-import ui.UiTva;
 
 public class Main {
 
@@ -37,6 +29,10 @@ public class Main {
 //		
 //		
 		ContactBook n = new ContactBook();
+		for (Contact next: n.getContacts()) {
+			System.out.println(next.toString());
+			System.out.println();
+		}
 
 //		n.addContactToList(new Contact("Erik", "kalaspuff@mejl.se", "+31 63922880"));
 //		n.addContactToList(new Contact("Aoife", "aoife@mejl.se", "+46 123 456 78"));
@@ -47,7 +43,7 @@ public class Main {
 //		n.deleteContact(n.findContact("Aoife"));
 //		n.deleteContact(n.findContact("Elske"));
 		
-		Lasning ls = new Lasning();
+		
 		
 		
 		
