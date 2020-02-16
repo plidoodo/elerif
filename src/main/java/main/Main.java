@@ -37,7 +37,11 @@ public class Main {
 //		n.deleteContact(n.findContact("Erik"));
 //		n.deleteContact(n.findContact("Aoife"));
 //		n.deleteContact(n.findContact("Elske"));
-		
+		ContactBook cb = new ContactBook();
+		for (Contact next: cb.getContacts()) {
+			System.out.println(next.toString());
+			System.out.println();
+		}
 		
 		
 		
