@@ -2,10 +2,11 @@ package main;
 
 import doman.Contact;
 import doman.ContactBook;
+import ui.UiTva;
 
 public class Main {
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 //		Contact c = new Contact();
 //		ContactBook cl = new ContactBook();
 //		cl.addContactToList(c.createContact("någon annan", "", "+31 63922880"));
@@ -41,6 +42,10 @@ public class Main {
 		for (Contact next: cb.getContacts()) {
 			System.out.println(next.toString());
 			System.out.println();
+			
+			UiTva ui = new UiTva();
+			
+			ui.userInterface();
 		}
 		
 		

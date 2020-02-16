@@ -1,129 +1,170 @@
 package ui;
-
-import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import doman.Contact;
 import doman.ContactBook;
-import lagring.Lasning;
-
+import lagring.Lagring;
 public class UiTva extends JFrame {
+	
+	ContactBook contactbook = new ContactBook();
+	Contact c = new Contact();
+	Lagring lagring = new Lagring();
 	JFrame frame = new JFrame("Contactbook");
+	JPanel panel = new JPanel();
 	JButton save = new JButton("Save changes");
+	JButton save2 = new JButton("Save changes");
 	JButton updateContact = new JButton("Update contact");
 	JButton deleteContact = new JButton("Delete contact");
 	JButton searchContact = new JButton("Search contacts");
 	JButton showList = new JButton("Show contact list");
 	JButton ok = new JButton("OK");
 	JButton cancel = new JButton("Cancel");
+	JButton cancel2 = new JButton("Cancel");
 	JButton search = new JButton("Search");
-	JTextArea textArea = new JTextArea(200, 200);
-
-//	JTextArea textArea = new JTextArea(40, 60);
-	JTextArea displayContacts = new JTextArea(40, 60);
-
-	JScrollPane scrollPane = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+	DefaultListModel<Contact> listModel = new DefaultListModel<Contact>();
+	JList<Contact> list = new JList<Contact>(listModel);
+	JScrollPane scroll =new JScrollPane(list, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 			JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
 	JLabel n = new JLabel("Name: ", SwingConstants.CENTER);
+	JLabel n2 = new JLabel("Name: ", SwingConstants.CENTER);
 	JTextField namn = new JTextField(15);
+	JTextField namn2 = new JTextField(15);
 	JLabel m = new JLabel("E-mail: ", SwingConstants.CENTER);
+	JLabel m2 = new JLabel("E-mail: ", SwingConstants.CENTER);
 	JTextField mejl = new JTextField(15);
+	JTextField mejl2 = new JTextField(15);
 	JLabel t = new JLabel("Telefonnr: ", SwingConstants.CENTER);
+	JLabel t2 = new JLabel("Telefonnr: ", SwingConstants.CENTER);
 	JTextField telNr = new JTextField();
+	JTextField telNr2 = new JTextField();
 	JLabel s = new JLabel("Search: ", SwingConstants.CENTER);
 	JTextField searchField = new JTextField(15);
-	JLabel contacts = new JLabel("Hejsan hoppas jag heter ife och alla Ã¤r mina vÃ¤nner loL");
-
-	ContactBook contactbook = new ContactBook();
-	
-
+	JLabel kontakt = new JLabel();
 	public void userInterface() {
-		Contact c = new Contact();
+		listModel.addAll(contactbook.getContacts());
 		JTabbedPane tp = new JTabbedPane();
 		add(tp);
-
 		// Tab 1
 		JPanel tabOne = new JPanel();
 		tp.addTab("Add contact", tabOne);
-		tabOne.add(n);
-		tabOne.add(namn);
-		tabOne.add(m);
-		tabOne.add(mejl);
-		tabOne.add(t);
-		tabOne.add(telNr);
+		tabOne.add(n2);
+		tabOne.add(namn2);
+		tabOne.add(m2);
+		tabOne.add(mejl2);
+		tabOne.add(t2);
+		tabOne.add(telNr2);
 		tabOne.setLayout(new GridLayout(4, 4));
-		tabOne.add(save);
-		tabOne.add(cancel);
-
-		save.addActionListener(e -> {
+		tabOne.add(save2);
+		tabOne.add(cancel2);
+		save2.addActionListener(e -> {
 			contactbook.addContactToList(c.createContact(namn.getText(), mejl.getText(), telNr.getText()));
+			listModel.clear();
+			listModel.addAll(contactbook.getContacts());
 			JOptionPane.showMessageDialog(null, "Contact added");
 		});
-
-		cancel.addActionListener(e -> {
+		cancel2.addActionListener(e -> {
 			dispose();
 		});
-
 		// Tab2
 		JPanel tabTwo = new JPanel();
 		tp.addTab("Search contact", tabTwo);
 		tabTwo.add(s);
 		tabTwo.add(searchField);
 		tabTwo.add(search);
-		tabTwo.add(displayContacts);
-
-//		search.addActionListener(e -> {
-//			searchField.getText();
-//			displayContacts.setText(contactbook.findContact(c);
-//			
-//			
-//		});
-
+		tabTwo.add(kontakt);
+			search.addActionListener(e -> {
+				try {
+					Contact trupp = contactbook.findContact(searchField.getText());
+					kontakt.setText(trupp.toString());
+				} catch (Exception e1) {
+					
+					e1.printStackTrace();
+				}
+			
+		});
 		// Tab3
-
 		JPanel tabThree = new JPanel();
 		tabThree.setLayout(new FlowLayout());
-
-		for (Contact next : contactbook.getContacts()) {
-			textArea.append(next.toString());
-		}
-
 		tp.addTab("Show contact list", tabThree);
 		tabThree.add(updateContact);
 		tabThree.add(deleteContact);
-		tabThree.add(scrollPane);
-		tabThree.add(textArea, BorderLayout.CENTER);
-
+		tabThree.add(scroll);
+		
+		
+		JDialog update = new JDialog();
+		JPanel update2 = new JPanel();
+		update.setContentPane(update2);
+		update2.setLayout(new GridLayout(4, 4));
+		
+		update2.add(n);
+		update2.add(namn);
+		update2.add(m);
+		update2.add(mejl);
+		update2.add(t);
+		update2.add(telNr);
+		update2.add(save);
+		update2.add(cancel);
+		
+		updateContact.addActionListener(e -> {
+			update.pack();
+			update.setVisible(true);
+		});
+		
+		save.addActionListener(e -> {
+			Contact con = (Contact)list.getSelectedValue();
+			Contact tact = c.createContact(namn.getText(), mejl.getText(), telNr.getText());
+			try {
+				contactbook.updateContact(con, tact);
+			} catch (Exception e1) {
+				
+				e1.printStackTrace();
+			}
+			
+			listModel.clear();
+			listModel.addAll(contactbook.getContacts());
+		});
+				
+		
+		deleteContact.addActionListener(e -> {
+			Contact con = (Contact)list.getSelectedValue();
+			contactbook.deleteContact(con);
+			listModel.clear();
+			listModel.addAll(contactbook.getContacts());
+		});
+		
+		cancel.addActionListener(e ->{
+			update.dispose();
+		});
+		
+		
+		list.toString();
 		pack();
 		setSize(350, 350);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-
+		
 	}
-
 	private class ButtonListener implements ActionListener {
-
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			e.getActionCommand();
 		}
-
 	}
-
 }
