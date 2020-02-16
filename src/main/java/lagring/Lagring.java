@@ -1,15 +1,9 @@
 package lagring;
 
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
-
-import doman.Contact;
 import doman.ContactBook;
 
 public class Lagring {
