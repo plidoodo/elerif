@@ -74,7 +74,7 @@ public class ContactBookTest {
 		c = new Contact("Sara", "saar@mejl.se", "073 45 67 89");
 		cl.addContactToList(c.createContact("Sara", "saar@mejl.se", "073 45 67 89"));
 		assertThrows(ContactNotFoundException.class, () -> {
-			cl.findContact("Anna ");
+			cl.findContact("Anna");
 		});
 	}
 

@@ -50,11 +50,11 @@ public class ContactBook {
 	// inte finns
 	public Contact findContact(String input) throws ContactNotFoundException {
 		for (int i = 0; i < contacts.size(); i++) {
-			if (input.equalsIgnoreCase(contacts.get(i).getNamn().trim())) {
+			if (input.trim().equalsIgnoreCase(contacts.get(i).getNamn().trim())) {
 				return contacts.get(i);
-			} else if (input.equalsIgnoreCase(contacts.get(i).getMejl().trim())) {
+			} else if (input.trim().equalsIgnoreCase(contacts.get(i).getMejl().trim())) {
 				return contacts.get(i);
-			} else if (input.equalsIgnoreCase(contacts.get(i).getTelefonNr().trim())) {
+			} else if (input.trim().equalsIgnoreCase(contacts.get(i).getTelefonNr().trim())) {
 				return contacts.get(i);
 			}
 		}
@@ -66,9 +66,7 @@ public class ContactBook {
 	public void updateContact(Contact a, Contact b) throws ContactNotFoundException {
 		if (findPosition(a) >= 0) {
 			contacts.set(findPosition(a), b);
-		} else {
-			throw new ContactNotFoundException("Kontakt finns inte!");
-		}
+		} 
 	}
 
 	// Metoden för att ta bort kontakten från listan
@@ -76,9 +74,7 @@ public class ContactBook {
 	public void deleteContact(Contact c) {
 		if (findPosition(c) >= 0) {
 			contacts.remove(findPosition(c));
-		} else {
-			System.out.println("Kontakt finns inte!");
-		}
+		} 
 	}
 
 	// Metod för att sortera listan alfabetisk'
