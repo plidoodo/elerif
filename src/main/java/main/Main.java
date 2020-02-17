@@ -1,7 +1,5 @@
 package main;
 
-import doman.Contact;
-import doman.ContactBook;
 import ui.Ui;
 
 public class Main {

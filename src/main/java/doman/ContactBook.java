@@ -91,12 +91,4 @@ public class ContactBook {
 	public int numberOfContacts() {
 		return contacts.size();
 	}
-
-	public void printContactBook() {
-
-		for(Contact next: contacts) {
-			getContacts().toString();
-		}
-
-	}
 }
