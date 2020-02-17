@@ -25,13 +25,13 @@ public class Contact implements Comparable<Contact>, Serializable {
 
 	// Konstruktorn med setters för namn, mejl och telefon
 	public Contact(String namn, String mejl, String telefonNr) {
-		this.namn = namn;
+		this.namn = namn + " ";
 		if (validator(mejl, regExM) == true || mejl.equals("")) {
 			this.mejl = mejl;
 		}
 		if (validator(telefonNr, regExIT) == true
 				|| validator(telefonNr, regExTM) == true || telefonNr.equals("")) {
-			this.telefonNr = telefonNr;
+			this.telefonNr = telefonNr + " ";
 		}
 	}
 

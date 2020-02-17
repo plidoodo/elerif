@@ -25,7 +25,7 @@ public class ContactBook {
 	// hjälpmetod till olika metoder
 	public int findPosition(Contact contact) {
 		for (int i = 0; i < contacts.size(); i++) {
-			if (contact.getNamn().equals(contacts.get(i).getNamn())) {
+			if (contact.getNamn().equals(contacts.get(i).getNamn().trim())) {
 				return i;
 			}
 		}
@@ -50,11 +50,11 @@ public class ContactBook {
 	// inte finns
 	public Contact findContact(String input) throws Exception {
 		for (int i = 0; i < contacts.size(); i++) {
-			if (input.equalsIgnoreCase(contacts.get(i).getNamn())) {
+			if (input.equalsIgnoreCase(contacts.get(i).getNamn().trim())) {
 				return contacts.get(i);
-			} else if (input.equalsIgnoreCase(contacts.get(i).getMejl())) {
+			} else if (input.equalsIgnoreCase(contacts.get(i).getMejl().trim())) {
 				return contacts.get(i);
-			} else if (input.equalsIgnoreCase(contacts.get(i).getTelefonNr())) {
+			} else if (input.equalsIgnoreCase(contacts.get(i).getTelefonNr().trim())) {
 				return contacts.get(i);
 			}
 		}
