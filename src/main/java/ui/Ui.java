@@ -112,7 +112,7 @@ public class Ui extends JFrame {
 		tabTwo.add(search);
 		tabTwo.add(kontakt);
 		
-//		sök efter kontakter
+//		sÃ¶k efter kontakter
 			search.addActionListener(e -> {
 				try {
 					Contact trupp = contactbook.findContact(searchField.getText());
@@ -130,7 +130,7 @@ public class Ui extends JFrame {
 		tabThree.add(deleteContact);
 		tabThree.add(scroll);
 		
-//		Detta är rutan som kommer upp när man trycker på update
+//		Detta Ã¤r rutan som kommer upp nÃ¤r man trycker pÃ¥ update
 		update.setContentPane(update2);
 		update2.setLayout(new GridLayout(4, 4));
 		
@@ -143,7 +143,7 @@ public class Ui extends JFrame {
 		update2.add(save);
 		update2.add(cancel);
 		
-//		visar rutan där man kan uppdatera kontakter
+//		visar rutan dÃ¤r man kan uppdatera kontakter
 		updateContact.addActionListener(e -> {
 			update.pack();
 			update.setVisible(true);
@@ -159,8 +159,8 @@ public class Ui extends JFrame {
 				e1.printStackTrace();
 			} finally {
 				lagring.addToFile(contactbook);
-				
 			}
+				
 			
 			listModel.clear();
 			listModel.addAll(contactbook.getContacts());
@@ -174,7 +174,7 @@ public class Ui extends JFrame {
 			listModel.clear();
 			listModel.addAll(contactbook.getContacts());
 		});
-//		avslutar utan att spara ändringar
+//		avslutar utan att spara Ã¤ndringar
 		cancel.addActionListener(e ->{
 			update.dispose();
 		});
