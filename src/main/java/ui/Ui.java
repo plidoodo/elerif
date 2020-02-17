@@ -87,13 +87,18 @@ public class Ui extends JFrame {
 		
 		tabOne.add(save2);
 		tabOne.add(cancel2);
-		
+//		Sparar kontakt
 		save2.addActionListener(e -> {
-			contactbook.addContactToList(c.createContact(namn.getText(), mejl.getText(), telNr.getText()));
-			lagring.addToFile(contactbook);
-			listModel.clear();
-			listModel.addAll(contactbook.getContacts());
-			JOptionPane.showMessageDialog(null, "Contact added");
+			if(contactbook.addContactToList(c.createContact(namn2.getText(), mejl2.getText(), telNr2.getText())))
+			{
+				lagring.addToFile(contactbook);
+				listModel.clear();
+				listModel.addAll(contactbook.getContacts());
+				JOptionPane.showMessageDialog(null, "Contact added");
+			}
+			else {
+				JOptionPane.showMessageDialog(null, "Sorry din bajskorv");
+			}
 		});
 		cancel2.addActionListener(e -> {
 			dispose();
@@ -106,6 +111,8 @@ public class Ui extends JFrame {
 		tabTwo.add(searchField);
 		tabTwo.add(search);
 		tabTwo.add(kontakt);
+		
+//		sök efter kontakter
 			search.addActionListener(e -> {
 				try {
 					Contact trupp = contactbook.findContact(searchField.getText());
@@ -123,7 +130,7 @@ public class Ui extends JFrame {
 		tabThree.add(deleteContact);
 		tabThree.add(scroll);
 		
-		
+//		Detta är rutan som kommer upp när man trycker på update
 		update.setContentPane(update2);
 		update2.setLayout(new GridLayout(4, 4));
 		
@@ -136,11 +143,12 @@ public class Ui extends JFrame {
 		update2.add(save);
 		update2.add(cancel);
 		
+//		visar rutan där man kan uppdatera kontakter
 		updateContact.addActionListener(e -> {
 			update.pack();
 			update.setVisible(true);
 		});
-		
+//		Sparar uppdaterad kontakt och sparar dem till fil
 		save.addActionListener(e -> {
 			Contact con = (Contact)list.getSelectedValue();
 			Contact tact = c.createContact(namn.getText(), mejl.getText(), telNr.getText());
@@ -158,14 +166,15 @@ public class Ui extends JFrame {
 			listModel.addAll(contactbook.getContacts());
 		});
 				
-		
+//		tar bort kontakt
 		deleteContact.addActionListener(e -> {
 			Contact con = (Contact)list.getSelectedValue();
 			contactbook.deleteContact(con);
+			lagring.addToFile(contactbook);
 			listModel.clear();
 			listModel.addAll(contactbook.getContacts());
 		});
-		
+//		avslutar utan att spara ändringar
 		cancel.addActionListener(e ->{
 			update.dispose();
 		});
@@ -175,7 +184,7 @@ public class Ui extends JFrame {
 		pack();
 		setSize(350, 350);
 		setVisible(true);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 	}
 	private class ButtonListener implements ActionListener {
