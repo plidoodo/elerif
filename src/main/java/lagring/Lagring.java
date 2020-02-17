@@ -11,24 +11,24 @@ public class Lagring {
 	public void addToFile(ContactBook cb) {
 
 		try {
-			FileOutputStream fos = new FileOutputStream("src\\main\\resources\\contact.txt");
+			FileOutputStream fos = new FileOutputStream("contact.txt");
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			oos.writeObject(cb.getContacts());
 			oos.close();
 			fos.close();
 
 		} catch (FileNotFoundException fne) {
-			try {
-				FileOutputStream fos = new FileOutputStream("src//main//resources//contact.txt");
-				ObjectOutputStream oos = new ObjectOutputStream(fos);
-				oos.writeObject(cb.getContacts());
-				oos.close();
-				fos.close();
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+//			try {
+//				FileOutputStream fos = new FileOutputStream("src//main//resources//contact.txt");
+//				ObjectOutputStream oos = new ObjectOutputStream(fos);
+//				oos.writeObject(cb.getContacts());
+//				oos.close();
+//				fos.close();
+//			} catch (FileNotFoundException e) {
+//				e.printStackTrace();
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
 
 			fne.printStackTrace();
 		} catch (IOException ioe) {

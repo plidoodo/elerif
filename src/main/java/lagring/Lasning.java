@@ -19,7 +19,7 @@ public class Lasning {
 		List<Contact> contacts = new ArrayList<>();
 		try
         {
-            FileInputStream fis = new FileInputStream("src\\main\\resources\\contact.txt");
+            FileInputStream fis = new FileInputStream("contact.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
  
             contacts = (List<Contact>) ois.readObject();
@@ -28,26 +28,26 @@ public class Lasning {
             fis.close();
         } 
 		catch (FileNotFoundException fne) {
-			try {
-				FileInputStream fis = new FileInputStream("src//main//resources//contact.txt");
-	            ObjectInputStream ois = new ObjectInputStream(fis);
-	 
-	            contacts = (List<Contact>) ois.readObject();
-	 
-	            ois.close();
-	            fis.close();
-				
-			}
-			catch (FileNotFoundException fne2) {
-				fne2.printStackTrace();
-			}
-			catch (IOException e) {
-				e.printStackTrace();
-			}
-			catch (ClassNotFoundException ce) {
-				ce.printStackTrace();
-			}
-			
+//			try {
+//				FileInputStream fis = new FileInputStream("src//main//resources//contact.txt");
+//	            ObjectInputStream ois = new ObjectInputStream(fis);
+//	 
+//	            contacts = (List<Contact>) ois.readObject();
+//	 
+//	            ois.close();
+//	            fis.close();
+//				
+//			}
+//			catch (FileNotFoundException fne2) {
+//				fne2.printStackTrace();
+//			}
+//			catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//			catch (ClassNotFoundException ce) {
+//				ce.printStackTrace();
+//			}
+//			
 		}
         catch (IOException ioe) 
         {
