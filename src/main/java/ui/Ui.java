@@ -15,7 +15,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
-import javax.swing.SpringLayout;
 import javax.swing.SwingConstants;
 
 import doman.Contact;
@@ -58,6 +57,7 @@ public class Ui extends JFrame {
 	JLabel t = new JLabel("Telefonnr: ", SwingConstants.CENTER);
 	JLabel m = new JLabel("E-mail: ", SwingConstants.CENTER);
 	JLabel m2 = new JLabel("E-mail: ", SwingConstants.CENTER);
+	JLabel varning = new JLabel("Please search the exact name, e-mail or phonenumber!", SwingConstants.CENTER);
 	JTextField namn = new JTextField(15);
 	JTextField namn2 = new JTextField(15);
 	JTextField mejl = new JTextField(15);
@@ -107,12 +107,13 @@ public class Ui extends JFrame {
 		
 		// Tab2
 		tp.addTab("Search contact", tabTwo);
+		tabTwo.add(varning);
 		tabTwo.add(s);
 		tabTwo.add(searchField);
 		tabTwo.add(search);
 		tabTwo.add(kontakt);
 		
-//		sÃ¶k efter kontakter
+//		sök efter kontakter
 			search.addActionListener(e -> {
 				try {
 					Contact trupp = contactbook.findContact(searchField.getText());
@@ -130,7 +131,7 @@ public class Ui extends JFrame {
 		tabThree.add(deleteContact);
 		tabThree.add(scroll);
 		
-//		Detta Ã¤r rutan som kommer upp nÃ¤r man trycker pÃ¥ update
+//		Detta är rutan som kommer upp när man trycker på update
 		update.setContentPane(update2);
 		update2.setLayout(new GridLayout(4, 4));
 		
@@ -143,7 +144,7 @@ public class Ui extends JFrame {
 		update2.add(save);
 		update2.add(cancel);
 		
-//		visar rutan dÃ¤r man kan uppdatera kontakter
+//		visar rutan där man kan uppdatera kontakter
 		updateContact.addActionListener(e -> {
 			update.pack();
 			update.setVisible(true);
@@ -174,7 +175,7 @@ public class Ui extends JFrame {
 			listModel.clear();
 			listModel.addAll(contactbook.getContacts());
 		});
-//		avslutar utan att spara Ã¤ndringar
+//		avslutar utan att spar ändringar
 		cancel.addActionListener(e ->{
 			update.dispose();
 		});
