@@ -13,7 +13,7 @@ public class Contact implements Comparable<Contact>, Serializable {
 	private String regExM = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
 	private String regExTM = "^\\+?(?:\\s*\\d){10}\\s*$";
 	private String regExIT = "^\\+(?:[0-9] ?){6,14}[0-9]$";
-
+	private String regExTT = "(?:\\\\(\\\\d{3}\\\\)|\\\\d{3}[-]*)\\\\d{3}[-]*\\\\d{4}";
 	private String namn;
 	private String telefonNr;
 	private String mejl;
@@ -30,7 +30,7 @@ public class Contact implements Comparable<Contact>, Serializable {
 			this.mejl = mejl;
 		}
 		if (validator(telefonNr, regExIT) == true
-				|| validator(telefonNr, regExTM) == true || telefonNr.equals("")) {
+				|| validator(telefonNr, regExTM) == true || telefonNr.equals("") || validator(telefonNr, regExTT) == true) {
 			this.telefonNr = telefonNr + " ";
 		}
 	}
