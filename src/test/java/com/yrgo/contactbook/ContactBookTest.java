@@ -72,9 +72,9 @@ public class ContactBookTest {
 		cl = new ContactBook();
 		cl.getContacts().clear();
 		c = new Contact("Sara", "saar@mejl.se", "073 45 67 89");
-		cl.addContactToList(c.createContact("Sara", "saar@mejl.se", "073 45 67 89"));
-		assertThrows(ContactNotFoundException.class, () -> {
-			cl.findContact("Anna");
+		cl.addContactToList(c.createContact("Sara", "saar@mejl.se", "073 456 78 99"));
+		assertThrows(ContactNotFoundException.class, ()->{
+			cl.findContact("");
 		});
 	}
 
@@ -136,8 +136,6 @@ public class ContactBookTest {
 		int positionChris = cl.findPosition(e);
 		
 		boolean sorted = positionSara == 2 && positionAnna == 0 && positionChris == 1;
-		assertTrue(sorted, "Kontakter ligger på alfabetiskt följd i ContactBook");
-		
-		
+		assertTrue(sorted, "Kontakter ligger på alfabetiskt följd i ContactBook");	
 	}
 }
