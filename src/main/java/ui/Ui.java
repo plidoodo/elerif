@@ -114,7 +114,7 @@ public class Ui extends JFrame {
 		tabTwo.add(search);
 		tabTwo.add(kontakt);
 		
-//		sök efter kontakter
+//		sök efter kontakter''
 			search.addActionListener(e -> {
 				if (searchField.getText().isEmpty()) {
 					JOptionPane.showMessageDialog(null, "Error: please enter exact name, e-mail or phonenumber!");
@@ -126,6 +126,7 @@ public class Ui extends JFrame {
 				} catch (Exception ContactNotFoundException) {
 					
 					ContactNotFoundException.printStackTrace();
+					tabTwo.add(error);
 				}
 				}
 				
