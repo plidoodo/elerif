@@ -25,7 +25,7 @@ public class ContactBook {
 	// hjälpmetod till olika metoder
 	public int findPosition(Contact contact) {
 		for (int i = 0; i < contacts.size(); i++) {
-			if (contact.getNamn().equals(contacts.get(i).getNamn().trim())) {
+			if (contact.getNamn().trim().equals(contacts.get(i).getNamn().trim())) {
 				return i;
 			}
 		}
@@ -48,7 +48,7 @@ public class ContactBook {
 	// Metoden för att hitta kontakten - mha namn
 	// Om namnen inte finns i listan, kommer metoden att skriva ut att kontakten
 	// inte finns
-	public Contact findContact(String input) throws Exception {
+	public Contact findContact(String input) throws ContactNotFoundException {
 		for (int i = 0; i < contacts.size(); i++) {
 			if (input.equalsIgnoreCase(contacts.get(i).getNamn().trim())) {
 				return contacts.get(i);
@@ -63,7 +63,7 @@ public class ContactBook {
 
 	// Metoden för att uppdatera kontakten
 	// metoden placeras uppdaterade kontakten på samma plats i listan
-	public void updateContact(Contact a, Contact b) throws Exception {
+	public void updateContact(Contact a, Contact b) throws ContactNotFoundException {
 		if (findPosition(a) >= 0) {
 			contacts.set(findPosition(a), b);
 		} else {

@@ -18,7 +18,7 @@ public class ContactTest {
 	public void createContactTest() {
 		a = new Contact("Anna", "anna@mejl.se", "+46 731 23 45 67");
 		a.createContact("Anna", "anna@mejl.se", "+46 731 23 45 67");
-		boolean compare = a.getNamn().equalsIgnoreCase("anna") && a.getMejl().equalsIgnoreCase("anna@mejl.se") && a.getTelefonNr().equalsIgnoreCase("+46 731 23 45 67");
+		boolean compare = a.getNamn().trim().equalsIgnoreCase("anna") && a.getMejl().trim().equalsIgnoreCase("anna@mejl.se") && a.getTelefonNr().trim().equalsIgnoreCase("+46 731 23 45 67");
 		assertTrue(compare, "Contacten har skapat med korrekta parametern");
 	}
 	

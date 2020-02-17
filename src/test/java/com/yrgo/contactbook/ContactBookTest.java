@@ -74,7 +74,7 @@ public class ContactBookTest {
 		c = new Contact("Sara", "saar@mejl.se", "073 45 67 89");
 		cl.addContactToList(c.createContact("Sara", "saar@mejl.se", "073 45 67 89"));
 		assertThrows(ContactNotFoundException.class, () -> {
-			cl.findContact("Anna");
+			cl.findContact("Anna ");
 		});
 	}
 
@@ -92,8 +92,8 @@ public class ContactBookTest {
 		d.createContact("Sara", "sara@mejl.se", "073 450 67 99");
 		cl.updateContact(c, d);
 
-		boolean updated = cl.findContact("Sara").getMejl().equals("sara@mejl.se")
-				&& cl.findContact("Sara").getTelefonNr().equals("073 450 67 99");
+		boolean updated = cl.findContact("Sara").getMejl().trim().equals("sara@mejl.se")
+				&& cl.findContact("Sara").getTelefonNr().trim().equals("073 450 67 99");
 		assertTrue(updated, "Kontakt blev uppdaterat med korrekta mejl och telefonnummer");
 	}
 
