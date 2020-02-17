@@ -1,225 +1,187 @@
 package ui;
-
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
+import javax.swing.SpringLayout;
 import javax.swing.SwingConstants;
 
 import doman.Contact;
 import doman.ContactBook;
-
-
+import lagring.Lagring;
 public class Ui extends JFrame {
 	
-	
-	private JLabel status;
-	private JPanel panel;
-	private JFrame frame = new JFrame("Contact book");
-	
-	Contact namn;
-	
 	ContactBook contactbook = new ContactBook();
+	Contact c = new Contact();
+	Lagring lagring = new Lagring();
 	
+	JFrame frame = new JFrame("Contactbook");
+	JDialog update = new JDialog();
+	JPanel update2 = new JPanel();
+	JPanel panel = new JPanel();
+	JPanel tabOne = new JPanel();
+	JPanel tabTwo = new JPanel();
+	JPanel tabThree = new JPanel();
+	JButton save = new JButton("Save changes");
+	JButton save2 = new JButton("Save changes");
+	JButton updateContact = new JButton("Update contact");
+	JButton deleteContact = new JButton("Delete contact");
+	JButton searchContact = new JButton("Search contacts");
+	JButton showList = new JButton("Show contact list");
+	JButton ok = new JButton("OK");
+	JButton cancel = new JButton("Cancel");
+	JButton cancel2 = new JButton("Cancel");
+	JButton search = new JButton("Search");
 	
+	DefaultListModel<Contact> listModel = new DefaultListModel<Contact>();
+	JList<Contact> list = new JList<Contact>(listModel);
+	JScrollPane scroll =new JScrollPane(list, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+			JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+
+	JLabel n = new JLabel("Name: ", SwingConstants.CENTER);
+	JLabel n2 = new JLabel("Name: ", SwingConstants.CENTER);
+	JLabel kontakt = new JLabel();
+	JLabel s = new JLabel("Search: ", SwingConstants.CENTER);
+	JLabel t2 = new JLabel("Telefonnr: ", SwingConstants.CENTER);
+	JLabel t = new JLabel("Telefonnr: ", SwingConstants.CENTER);
+	JLabel m = new JLabel("E-mail: ", SwingConstants.CENTER);
+	JLabel m2 = new JLabel("E-mail: ", SwingConstants.CENTER);
+	JTextField namn = new JTextField(15);
+	JTextField namn2 = new JTextField(15);
+	JTextField mejl = new JTextField(15);
+	JTextField mejl2 = new JTextField(15);
+	JTextField telNr = new JTextField(15);
+	JTextField telNr2 = new JTextField();
+	JTextField searchField = new JTextField(15);
+	JTabbedPane tp = new JTabbedPane();
+
 	public void userInterface() {
-		frame.setSize(400, 400);
-		frame.getContentPane().setLayout(new GridLayout(3, 1));
+		listModel.addAll(contactbook.getContacts());
+		add(tp);
+
 		
-		status = new JLabel("", JLabel.CENTER);
-//		status.setSize();
-		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
-		panel = new JPanel();
-		panel.setLayout(new FlowLayout());
-		
-		frame.getContentPane().add(panel);
-		frame.getContentPane().add(status);
-//		frame.pack();
-//		frame.setVisible(true);
-		
-		}
+		// Tab 1
 	
-	public void show() {
-		frame.pack();
-		frame.setVisible(true);
-	}
-	
-	public void showEvent() {
+		tp.addTab("Add contact", tabOne);
+		tabOne.add(n2);
+		tabOne.add(namn2);
+		tabOne.add(m2);
+		tabOne.add(mejl2);
+		tabOne.add(t2);
+		tabOne.add(telNr2);
+		tabOne.setLayout(new GridLayout(4, 4));
 		
 		
-		JButton addContact = new JButton("Add contact");
-		JButton updateContact = new JButton("Update contact");
-		JButton deleteContact = new JButton("Delete contact");
-		JButton searchContact = new JButton("Search contacts");
-		JButton showList = new JButton("Show contact list");
 		
+		tabOne.add(save2);
+		tabOne.add(cancel2);
 		
-		addContact.addActionListener(e -> {
-			pressAddContact();
+		save2.addActionListener(e -> {
+			contactbook.addContactToList(c.createContact(namn.getText(), mejl.getText(), telNr.getText()));
+			lagring.addToFile(contactbook);
+			listModel.clear();
+			listModel.addAll(contactbook.getContacts());
+			JOptionPane.showMessageDialog(null, "Contact added");
 		});
+		cancel2.addActionListener(e -> {
+			dispose();
+		});
+	
+		
+		// Tab2
+		tp.addTab("Search contact", tabTwo);
+		tabTwo.add(s);
+		tabTwo.add(searchField);
+		tabTwo.add(search);
+		tabTwo.add(kontakt);
+			search.addActionListener(e -> {
+				try {
+					Contact trupp = contactbook.findContact(searchField.getText());
+					kontakt.setText(trupp.toString());
+				} catch (Exception e1) {
+					
+					e1.printStackTrace();
+				}
+			
+		});
+		// Tab3
+		tabThree.setLayout(new FlowLayout());
+		tp.addTab("Show contact list", tabThree);
+		tabThree.add(updateContact);
+		tabThree.add(deleteContact);
+		tabThree.add(scroll);
+		
+		
+		update.setContentPane(update2);
+		update2.setLayout(new GridLayout(4, 4));
+		
+		update2.add(n);
+		update2.add(namn);
+		update2.add(m);
+		update2.add(mejl);
+		update2.add(t);
+		update2.add(telNr);
+		update2.add(save);
+		update2.add(cancel);
+		
 		updateContact.addActionListener(e -> {
-			pressUpdateContact();
+			update.pack();
+			update.setVisible(true);
 		});
+		
+		save.addActionListener(e -> {
+			Contact con = (Contact)list.getSelectedValue();
+			Contact tact = c.createContact(namn.getText(), mejl.getText(), telNr.getText());
+			try {
+				contactbook.updateContact(con, tact);
+			} catch (Exception e1) {
+				
+				e1.printStackTrace();
+			} finally {
+				lagring.addToFile(contactbook);
+				
+			}
+			
+			listModel.clear();
+			listModel.addAll(contactbook.getContacts());
+		});
+				
+		
 		deleteContact.addActionListener(e -> {
-			pressDeleteContact();
-		});
-		searchContact.addActionListener(e -> {
-			pressSearchContact();
-		});
-		showList.addActionListener(e -> {
-			pressShowList();
+			Contact con = (Contact)list.getSelectedValue();
+			contactbook.deleteContact(con);
+			listModel.clear();
+			listModel.addAll(contactbook.getContacts());
 		});
 		
+		cancel.addActionListener(e ->{
+			update.dispose();
+		});
 		
 		
-		panel.add(addContact);
-		panel.add(updateContact);
-		panel.add(deleteContact);
-		panel.add(showList);
-		
-	}
-	public void pressAddContact() {
-		
-		frame.setSize(400, 400);
-		frame.getContentPane().setLayout(new GridLayout(2, 5));
-		
-		JLabel n = new JLabel("Name: ", SwingConstants.CENTER);
-		JTextField namn = new JTextField();
-		namn.setSize(100, 50);
-		JLabel m = new JLabel("E-mail: ", SwingConstants.CENTER);
-		JTextField mejl = new JTextField();
-		JLabel t = new JLabel("Telefonnr: ", SwingConstants.CENTER);
-		JTextField telnr = new JTextField();
-		
-		JButton ok = new JButton("OK");
-		JButton cancel = new JButton("Cancel");
-		
-		
-		ok.setActionCommand("OK");
-		cancel.setActionCommand("Cancel");
-		
-		ok.addActionListener(new ButtonListener());
-		cancel.addActionListener(new ButtonListener());
-		
-		
-		panel.add(n);
-		panel.add(namn);
-		panel.add(m);
-		panel.add(mejl);
-		panel.add(t);
-		panel.add(telnr);
-		panel.add(ok);
-		panel.add(cancel);
-		
-		frame.setVisible(true);
-		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
+		list.toString();
+		pack();
+		setSize(350, 350);
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 	}
 	private class ButtonListener implements ActionListener {
-
-	    @Override
-	    public void actionPerformed(ActionEvent e) {
-	        String cmd = e.getActionCommand();
-
-	        if (cmd.equals("Cancel")) {
-	            dispose();
-	            
-	        }
-	        else {
-	        	contactbook.addContactToList(namn);
-	        }
-	    }
-	
-	}	
-	public void pressUpdateContact() {
-		
-	}
-	public void pressDeleteContact() {
-		
-	}
-	public void pressSearchContact() {
-		panel.setLayout(new FlowLayout());
-		
-		frame.setSize(400, 400);
-		frame.getContentPane().setLayout(new GridLayout(1, 2));
-		
-		JLabel s = new JLabel("Sök: ", SwingConstants.CENTER);
-		JTextField searchField = new JTextField();
-		
-		JButton search = new JButton("Save");
-		JButton cancel = new JButton("Cancel");
-		
-		search.addActionListener(e -> {
-			pressAddContact();
-		});
-		
-		cancel.addActionListener(e -> {
-			pressAddContact();
-		});
-		
-		
-		panel.add(s);
-		panel.add(searchField);
-		panel.add(s);
-		panel.add(search);
-		frame.setVisible(true);
-		
-		
-		
-		
-		
-		
-	}
-	public void pressShowList() {
-		
-		
-		panel = new JPanel();
-		panel.setLayout(new FlowLayout());
-		
-		frame = new JFrame("Contacts");
-		frame.setSize(400, 400);
-		frame.getContentPane().setLayout(new GridLayout());
-		
-		JTextArea k = new JTextArea();
-		contactbook.sortContacts();
-		for (Contact next:contactbook.getContacts()) {
-		k.setText(next.toString());
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			e.getActionCommand();
 		}
-		
-		k.setSize(200, 200);
-		
-		
-		
-		
 	}
-	
-	
 }
-
-//Ui ui = new Ui();
-//
-//ui.userInterface();
-//ui.showEvent();
-//ui.show();
-
-
-//public String printContactBook() {
-//
-//StringBuilder coolstring = new StringBuilder();
-//for (int i = 0; i < contacts.size(); i++) {
-//coolstring.append("Namn: " + getContacts().get(i).getNamn());
-//coolstring.append("Telnr: " + getContacts().get(i).getTelefonNr());
-//coolstring.append("Mail: " + getContacts().get(i).getMejl());
-//
-//}
-//return coolstring.toString();
-//}
