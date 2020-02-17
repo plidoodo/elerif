@@ -57,7 +57,8 @@ public class Ui extends JFrame {
 	JLabel t = new JLabel("Telefonnr: ", SwingConstants.CENTER);
 	JLabel m = new JLabel("E-mail: ", SwingConstants.CENTER);
 	JLabel m2 = new JLabel("E-mail: ", SwingConstants.CENTER);
-	JLabel varning = new JLabel("Please search the exact name, e-mail or phonenumber!", SwingConstants.CENTER);
+	JLabel varning = new JLabel("Please enter the exact name, e-mail or phonenumber!", SwingConstants.CENTER);
+	JLabel error = new JLabel("The contact cannot be found");
 	JTextField namn = new JTextField(15);
 	JTextField namn2 = new JTextField(15);
 	JTextField mejl = new JTextField(15);
@@ -115,14 +116,20 @@ public class Ui extends JFrame {
 		
 //		sök efter kontakter
 			search.addActionListener(e -> {
+				if (searchField.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Error: please enter exact name, e-mail or phonenumber!");
+				}
+				else {
 				try {
 					Contact trupp = contactbook.findContact(searchField.getText());
 					kontakt.setText(trupp.toString());
-				} catch (Exception e1) {
+				} catch (Exception ContactNotFoundException) {
 					
-					e1.printStackTrace();
+					ContactNotFoundException.printStackTrace();
 				}
-			
+				}
+				
+				
 		});
 		// Tab3
 		tabThree.setLayout(new FlowLayout());
@@ -146,8 +153,14 @@ public class Ui extends JFrame {
 		
 //		visar rutan där man kan uppdatera kontakter
 		updateContact.addActionListener(e -> {
+			if (list.isSelectionEmpty()) {
+				JOptionPane.showMessageDialog(null, "Error: please select a contact to update!");
+				
+			}
+			else {
 			update.pack();
 			update.setVisible(true);
+			}
 		});
 //		Sparar uppdaterad kontakt och sparar dem till fil
 		save.addActionListener(e -> {
@@ -155,9 +168,9 @@ public class Ui extends JFrame {
 			Contact tact = c.createContact(namn.getText(), mejl.getText(), telNr.getText());
 			try {
 				contactbook.updateContact(con, tact);
-			} catch (Exception e1) {
+			} catch (Exception ContactNotFoundException) {
 				
-				e1.printStackTrace();
+				ContactNotFoundException.printStackTrace();
 			} finally {
 				lagring.addToFile(contactbook);
 			}
@@ -169,11 +182,16 @@ public class Ui extends JFrame {
 				
 //		tar bort kontakt
 		deleteContact.addActionListener(e -> {
+			if (list.isSelectionEmpty()) {
+				JOptionPane.showMessageDialog(null, "Error, please select contact to delete!");
+			}
+			else {
 			Contact con = (Contact)list.getSelectedValue();
 			contactbook.deleteContact(con);
 			lagring.addToFile(contactbook);
 			listModel.clear();
 			listModel.addAll(contactbook.getContacts());
+			}
 		});
 //		avslutar utan att spar ändringar
 		cancel.addActionListener(e ->{
@@ -185,7 +203,7 @@ public class Ui extends JFrame {
 		pack();
 		setSize(350, 350);
 		setVisible(true);
-		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 	}
 	private class ButtonListener implements ActionListener {
