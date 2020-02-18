@@ -36,11 +36,15 @@ public class Contact implements Comparable<Contact>, Serializable {
 		this.namn = namn + " ";
 		if (validator(mejl, regExM) == true || mejl.equals("")) {
 			this.mejl = mejl;
-		} 
+		} else {
+			this.mejl = mejl + "*";
+		}
 		if (validator(telefonNr, regExIT) == true
 				|| validator(telefonNr, regExTM) == true || telefonNr.equals("") || validator(telefonNr, regExTT) == true) {
 			this.telefonNr = telefonNr + " ";
-		} 
+		} else {
+		this.telefonNr = telefonNr + "*";	
+		}
 	}
 
 	/**
