@@ -20,12 +20,18 @@ public class Contact implements Comparable<Contact>, Serializable {
 	private String telefonNr;
 	private String mejl;
 
-	// Tom konstruktorn
+	/**
+	 * Tom konstruktorn
+	 * @author elske
+	 */
 	public Contact() {
 
 	}
 
-	// Konstruktorn med setters för namn, mejl och telefon
+	/**
+	 * Konstruktorn med setters för namn, mejl och telefon
+	 * @author elske
+	 */
 	public Contact(String namn, String mejl, String telefonNr) {
 		this.namn = namn + " ";
 		if (validator(mejl, regExM) == true || mejl.equals("")) {
@@ -41,7 +47,10 @@ public class Contact implements Comparable<Contact>, Serializable {
 		}
 	}
 
-	// Getters
+	/**
+	 * Getters
+	 * @author elske
+	 */
 	public String getNamn() {
 		return namn;
 	}
@@ -54,16 +63,25 @@ public class Contact implements Comparable<Contact>, Serializable {
 		return mejl;
 	}
 
-	// Metod för att skapa nya kontakten.
-	// Metoden anropas när man ska lägga till nya kontakter i ContactBook
-	// Arraylistan
+	/**
+	* @author elske
+	* Metod för att skapa nya kontakten.
+	* Metoden anropas när man ska lägga till nya kontakter i ContactBook
+	* Arraylistan	 
+	* */
 	public Contact createContact(String namn, String mejl, String telefonNr) {
 
 		return new Contact(namn, mejl, telefonNr);
 	}
 
-	//Hjälpmetod för att kontrolera om mejl och telefonnummer har korrekta format
-	//Metoden fugerar mha regular expressions, och pattern & matcher
+	 /**
+	  * Hjälpmetod för att kontrolera om mejl och telefonnummer har korrekta format
+	  * Metoden fugerar mha regular expressions, och pattern & matcher
+	  * @param s
+	  * @param regEx
+	  * @return
+	  * @author elske
+	  */
 	public boolean validator(String s, String regEx) {
 
 		Pattern pattern = Pattern.compile(regEx);
@@ -77,14 +95,20 @@ public class Contact implements Comparable<Contact>, Serializable {
 		}
 	}
 
-	// To String metod för kontakten
-	// Anropas när man vill skriva ut en viss kontakt
+	/**
+	 * To String metod för kontakten
+	 * Anropas när man vill skriva ut en viss kontakt
+	 * @author elske
+	 */
 	@Override
 	public String toString() {
 		return namn + "\n" + telefonNr + "\n" + mejl;
 	}
 
-	// Metod som gjor möjligt att jämföra kontakten med varandra
+	/**
+	 * Metod som gjor möjligt att jämföra kontakten med varandra
+	 * @author elske
+	 */
 	@Override
 	public int compareTo(Contact b) {
 		Contact a = (Contact) b;

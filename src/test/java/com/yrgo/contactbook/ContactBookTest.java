@@ -16,7 +16,10 @@ public class ContactBookTest {
 	private Contact e;
 	private ContactBook cl;
 
-	// Test för att se om metoden addContact fungerar bra
+	/**
+	 * Test för att se om metoden addContact fungerar bra
+	 * @author elske
+	 */
 	@Test
 	public void addContactTest() {
 		cl = new ContactBook();
@@ -32,6 +35,9 @@ public class ContactBookTest {
 		assertTrue(sizeAfterAdd, "Kontakten finns i listan, listan är inte tom längre");
 	}
 
+	/**
+	 * @author elske
+	 */
 	@Test
 	public void addDoubleContactTest() {
 		cl = new ContactBook();
@@ -52,7 +58,11 @@ public class ContactBookTest {
 
 	}
 
-	// Test för att se om findContact metoden fungerar som den borde
+	/**
+	 * Test för att se om findContact metoden fungerar som den borde
+	 * @throws Exception
+	 * @author elske
+	 */
 	@Test
 	public void findContactTest() throws Exception {
 		cl = new ContactBook();
@@ -66,7 +76,10 @@ public class ContactBookTest {
 		assertTrue(contactFound, "Korrekta kontakt hittades med mejl som parametern");
 	}
 
-	// Test för att se om findContact kastar ContactNotFoundException
+	/**
+	 * Test för att se om findContact kastar ContactNotFoundException
+	 * @author elske
+	 */
 	@Test
 	public void ExceptionTest() {
 		cl = new ContactBook();
@@ -78,8 +91,12 @@ public class ContactBookTest {
 		});
 	}
 
-	// Test för att kontrolera om kontakten verkligen blir uppdaterad med
-	// uppdateContact metoden
+	/**
+	 *  Test för att kontrolera om kontakten verkligen blir uppdaterad med
+	 *  uppdateContact metoden
+	 * @throws Exception
+	 * @author elske
+	 */
 	@Test
 	public void updateContactTest() throws Exception {
 		cl = new ContactBook();
@@ -97,8 +114,11 @@ public class ContactBookTest {
 		assertTrue(updated, "Kontakt blev uppdaterat med korrekta mejl och telefonnummer");
 	}
 
-	// Test för att kontrolera om kontakten blir borttagen från ContactBook med
-	// metoden deleteContact.
+	/**
+	 *  Test för att kontrolera om kontakten blir borttagen från ContactBook med
+	 *  metoden deleteContact.
+	 *  @author elske
+	 */
 	@Test
 	public void deleteContactTest() {
 		cl = new ContactBook();
@@ -115,8 +135,11 @@ public class ContactBookTest {
 		assertTrue(deleted, "Kontakt blev borttagen från ContactBook");
 	}
 
-	// Test för att kontrolera om sorteringsmetod fungerar bra. ContactBook blir
-	// sorterad varje gång man lägger till ett kontakt.
+	/**
+	 *  Test för att kontrolera om sorteringsmetod fungerar bra. ContactBook blir
+	 *  sorterad varje gång man lägger till ett kontakt.
+	 *  @author elske
+	 */
 	@Test
 	public void sortContactsTest() {
 		cl = new ContactBook();

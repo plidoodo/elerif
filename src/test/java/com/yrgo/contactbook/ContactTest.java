@@ -13,7 +13,9 @@ public class ContactTest {
 	private String regExTM = "^\\+?(?:\\s*\\d){10}\\s*$";
 	private String regExIT = "^\\+(?:[0-9] ?){6,14}[0-9]$";
 
-	
+	/**
+	 * @author elske
+	 */
 	@Test
 	public void createContactTest() {
 		a = new Contact("Anna", "anna@mejl.se", "+46 731 23 45 67");
@@ -22,6 +24,9 @@ public class ContactTest {
 		assertTrue(compare, "Contacten har skapat med korrekta parametern");
 	}
 	
+	/**
+	 * @author elske
+	 */
 	@Test
 	public void validatorTest() {
 		a = new Contact("Anna", "anna@mejl.se", "+46 731 23 45 67 23 65");
