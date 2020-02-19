@@ -1,0 +1,703 @@
+commit 7f3bb24e15523ea578498c07941a3e6cf785fea8
+Author: Elske <e.muijderman@gmail.com>
+Date:   Tue Feb 18 11:06:38 2020 +0100
+
+    lade till * om man skriver i fel format mejl eller telnr
+
+commit eaa946561083bef76ce0bf21760da4244282b7ea
+Author: Elske <e.muijderman@gmail.com>
+Date:   Tue Feb 18 10:27:10 2020 +0100
+
+    tog bort JOptionpane message dialog för att det funkade inte med testerna
+
+commit 449920defb36bb342a7c506f158461a7eca48461
+Author: Elske <e.muijderman@gmail.com>
+Date:   Tue Feb 18 10:24:57 2020 +0100
+
+    ingenting
+
+commit 0f4def77a7b95caa904d95d9187d192030b10a82
+Author: Elske <e.muijderman@gmail.com>
+Date:   Tue Feb 18 10:14:59 2020 +0100
+
+    Lade till comment med author i mina klasser
+
+commit f9c3ad2fb46cfe9b3a6f88478181d1e2fedcf5e8
+Author: Elske <e.muijderman@gmail.com>
+Date:   Tue Feb 18 09:45:59 2020 +0100
+
+    lade till fel meddelande för mejl och telefonnr
+
+commit 12da2e42ac70c0d3e3c32f0742e7ca1bc97c805c
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 17 22:30:30 2020 +0100
+
+    fönster update contact stänger nu med save
+
+commit 36bc06468bf5f5b2e6e535924016fb0234a388d6
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 17 20:28:50 2020 +0100
+
+    lade till en regex
+
+commit 6112ba99d36577c33019dd06c7c2a68fb9972d5e
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Mon Feb 17 19:42:41 2020 +0100
+
+    Uppdaterade README
+
+commit a95daf44cea1335730a099af9ade5c052d7f5c21
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Mon Feb 17 19:36:51 2020 +0100
+
+    korrigering av förra commiten. Nu fungerar det som det ska.
+
+commit 61a7b1a3deda18b8fc359bfb5ba1bb19aa35adda
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Mon Feb 17 19:29:17 2020 +0100
+
+    pom.xml har nu korrekt path till main i jar plugin, samt skapar bara jar-fil med dependencies
+
+commit 5d521f77dafa796c574fa03fb55e247feb78bf23
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Mon Feb 17 18:55:26 2020 +0100
+
+    README är skriven
+
+commit 5d12c271bb57e3364a3fd5bc00cbe81d46bc4353
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 17 18:36:43 2020 +0100
+
+    löste problem med exceptiontest
+
+commit 75ffc214880a677a04d9b3b32dc248143f848cf7
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 17 16:11:04 2020 +0100
+
+    tog bort throws exception från update kontakt metoden
+
+commit 7d93d2f3d7e3691cc24550540cfce04358a23b1b
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Mon Feb 17 15:33:06 2020 +0100
+
+    lagt till fler if-satser
+
+commit ed814082d5f8f792dac822786022cb980190cb56
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Mon Feb 17 15:15:11 2020 +0100
+
+    Lite mer fix i ui
+
+commit cd936b2bbab4250497acb68114cddb166958805b
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 17 15:13:40 2020 +0100
+
+    fixade grejer i delete contact osv
+
+commit 6b0869f961a436594f4918d88ed956829d939fc5
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Mon Feb 17 14:54:07 2020 +0100
+
+    fixat lite
+
+commit eef89ed0555852566d4ffe817b3e4745422bf27b
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Mon Feb 17 14:53:25 2020 +0100
+
+    ny lagringsfil
+
+commit 0037059a0cf244190cdca68307e61d13d1df187f
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Mon Feb 17 14:24:14 2020 +0100
+
+    lade till en jlabel
+
+commit d10b2e3d0731b7798905cfa84f199c7ad0e2450a
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 17 13:41:28 2020 +0100
+
+    ändrade lite så att det skriver ut med mellanslag
+
+commit efdc28d53d7e8a6ca949497ffdd69820c284f4a9
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 17 13:27:57 2020 +0100
+
+    skapade txt filen igen"
+
+commit 70bf90cfa456e9e3e7aad0ca45f300b495494bd8
+Merge: 5995981 b02da76
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Mon Feb 17 13:19:31 2020 +0100
+
+    jag är djupt frustrerad
+
+commit 5995981ff00bb2e16b9cdc7b0e58722ea3b0d805
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Mon Feb 17 13:15:41 2020 +0100
+
+    lite uppdateringar i ui
+
+commit b02da76f97186ed5cc0aa708ed2301b3a2f2b545
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 17 13:11:55 2020 +0100
+
+    andrade contacts.txt
+
+commit cee3c8e1310cb9080e86d2592840131f07c2a147
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 17 13:07:52 2020 +0100
+
+    ändrade konstruktorn tillbaks
+
+commit 9ee6a74a71e19b7b33aa695e19c5add2e9882968
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 17 12:51:31 2020 +0100
+
+    ändrade contact konstruktorn
+
+commit 5d839b3fa16d5885b3d727e37a3bf9dc4b9d6721
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Mon Feb 17 12:35:28 2020 +0100
+
+    jag kan spara nu hurra
+
+commit a2e9e76f63418973867e5bf4118b11c1c9f9b65b
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 17 11:51:02 2020 +0100
+
+    tog bort print contactbook metoden
+
+commit 985b2bc2792a8e5c804c9db025bf0cd4e4608064
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Mon Feb 17 11:41:47 2020 +0100
+
+    fungerar, dock ej sparning
+
+commit b55136a9c3a351be439fb459071a921dbcff8767
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 17 10:56:26 2020 +0100
+
+    ändrade pomfilen för att lösa javadoc buggen
+
+commit 85fb5eb6f792c1c9be7279ccc373478810a91bae
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 17 10:05:28 2020 +0100
+
+    tog bort onodigt kod från main metoden
+
+commit ba4a3e647bd9ecab38e2c541cd51a7274ee7428e
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Sun Feb 16 23:55:43 2020 +0100
+
+    Äntligen fungerar det puss
+
+commit a055f8212934d00e09540fd97aff2e5c154fc0f9
+Author: Elske <e.muijderman@gmail.com>
+Date:   Sun Feb 16 21:17:54 2020 +0100
+
+    Tog bort unused imports
+
+commit 25977756d6f9932758ed96b95599b4152c8ecc1f
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Sun Feb 16 15:03:49 2020 +0100
+
+    lagt till hantering av olika filepaths beroende på op-system även för läsning
+
+commit 3d799cc177f68bd4e4b67b13f3251abe1f21ba12
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Sun Feb 16 14:56:20 2020 +0100
+
+    lagt till hantering av olika filepaths beroende på operativsystem
+
+commit 59c6a3408ebf083057ec7b02c4589a101ca6640c
+Merge: 4fdad1b 35ba6f2
+Author: Elske <e.muijderman@gmail.com>
+Date:   Fri Feb 14 14:54:40 2020 +0100
+
+    Merge branch 'master' of https://github.com/plidoodo/elerif
+
+commit 4fdad1bc7196b017d76b9cc1d71535e22aa10fe3
+Author: Elske <e.muijderman@gmail.com>
+Date:   Fri Feb 14 14:54:17 2020 +0100
+
+    Ändrade ContactBook tester för att vi ändrade ContactBook konstruktorn
+
+commit 35ba6f2e360524ea1e79eb4c6dd59f1af0a80a16
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Fri Feb 14 14:23:41 2020 +0100
+
+    tog bort gamla metoder
+
+commit 0f26ce491b47f293dbc11e4d183588b496a10168
+Author: Elske <e.muijderman@gmail.com>
+Date:   Fri Feb 14 14:13:53 2020 +0100
+
+    tog bort for loop från main
+
+commit a151240336b4df7c38ddf544b443c0a6405ad860
+Author: Elske <e.muijderman@gmail.com>
+Date:   Fri Feb 14 14:05:39 2020 +0100
+
+    tog bort lasning från ui (vi ändrade konstruktorn i contactbook så att alla kontakter lader till en början
+
+commit 54a958d0ed98259365cde3021bb07f497ddcd3af
+Author: Elske <e.muijderman@gmail.com>
+Date:   Fri Feb 14 13:49:59 2020 +0100
+
+    ändrade contactbook konstruktorn
+
+commit 190866c742a0ea67592c061a12f62920eb59efe2
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Fri Feb 14 13:47:03 2020 +0100
+
+    Ändrade läsningsklassen
+
+commit ae5cd83c3a70a8ae53b1daa96cb5094a9b793f76
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Fri Feb 14 12:42:09 2020 +0100
+
+    försöker få läsning att fungera
+
+commit 2325c1db8f7c98fa95f9e097f94f922727b76839
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Thu Feb 13 15:47:23 2020 +0100
+
+    lägg till exceptionhantering
+
+commit df32f10f6e7f2a87e91ef43d84874e2416432a76
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Thu Feb 13 15:43:13 2020 +0100
+
+    Ville ha med mig själv som kontakt
+
+commit 94388eb53ce48675d6736aa37abcbd007411f003
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Thu Feb 13 15:37:09 2020 +0100
+
+    Lagring och läsning använder nu serialization istället.
+
+commit f6adf70e6d55b6c29e33a0773d400a9cb3fbe64c
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Thu Feb 13 15:36:02 2020 +0100
+
+    lägg till ny contactfil. Raderade förra och råkade ge ett annat namn
+
+commit 352c52236aa5b2ca55abbbaa0891020662a04de7
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Thu Feb 13 13:17:16 2020 +0100
+
+    egentligen inget
+
+commit aadbfe0c54b41323acba5ae097dbbc1f4d9093cf
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Thu Feb 13 09:00:53 2020 +0100
+
+    La till några metodanrop i main.
+
+commit 0a5550d701f1469f71471312139e121a4601dde4
+Author: Elske <e.muijderman@gmail.com>
+Date:   Wed Feb 12 23:31:23 2020 +0100
+
+    korigerade to string metoden
+
+commit 7ce00b460f7928620871f2fc7a11e8539b73c9dc
+Author: Elske <e.muijderman@gmail.com>
+Date:   Wed Feb 12 23:18:15 2020 +0100
+
+    Försökte lösa några ui print contacts issues
+
+commit 90fc3ec04e46c415af10c7b199dea378d13d8c31
+Author: Elske <e.muijderman@gmail.com>
+Date:   Wed Feb 12 21:19:45 2020 +0100
+
+    lade till sista tester till ContactBookTest klassen
+
+commit 3e1bee86e74688e645868fb85639a929b5962ca3
+Author: Elske <e.muijderman@gmail.com>
+Date:   Wed Feb 12 21:00:36 2020 +0100
+
+    Lade till test till deleteContact metoden
+
+commit 16dc2076877db643a24c5d925e6351152f366654
+Author: Elske <e.muijderman@gmail.com>
+Date:   Wed Feb 12 20:52:52 2020 +0100
+
+    lade till test till updateContact metoden
+
+commit 0e853ada6bf05fce8038cd5f84cc74c37af8670e
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Wed Feb 12 11:39:07 2020 +0100
+
+    Jag har pillat lite i contactbook sorry elski
+
+commit f2786df55a3cbeea1227858d5bff6a75207b4701
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Tue Feb 11 18:43:45 2020 +0100
+
+    uit börjar bli fint
+
+commit 6c5ee7384ee56ad534f61589257783306bb6605d
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Tue Feb 11 12:17:31 2020 +0100
+
+    Cool uppdatering
+
+commit d297791c9d13d1445e0bc92c3cf0fab3242ab02c
+Author: Elske <e.muijderman@gmail.com>
+Date:   Tue Feb 11 11:04:46 2020 +0100
+
+    lade till sortContacts i addContact metod
+
+commit bce536d730dde29cbb27e187cf6287d8a9bb5f2c
+Author: Elske <e.muijderman@gmail.com>
+Date:   Tue Feb 11 10:21:58 2020 +0100
+
+    andrade paketnamner
+
+commit 1928dd6ee9d0b7ebd137d097f70d54c706296d30
+Author: Elske <e.muijderman@gmail.com>
+Date:   Tue Feb 11 09:42:19 2020 +0100
+
+    fixed projektstruktur
+
+commit 2963dda89c0e9aa6890ff35706b34b0a5b59e0dd
+Author: Elske <e.muijderman@gmail.com>
+Date:   Tue Feb 11 08:36:10 2020 +0100
+
+    ändrade en test i contactTest klassen
+
+commit 5c26e9bc6d07a4e3f16fed2d2c0dc54feb2856e7
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 10 22:42:59 2020 +0100
+
+    Skrev pomfilen, ändrade testfiler till JUnit5
+
+commit 74e4eb8840414a671071648a9226516f38543837
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 10 21:22:35 2020 +0100
+
+    Skrev några tester till
+
+commit ad8b3d54ab2992b632ab7cb39f38d49a1fb2b9ce
+Merge: 6420550 03a5439
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 10 14:46:44 2020 +0100
+
+    Merge branch 'master' of https://github.com/plidoodo/elerif
+
+commit 6420550da1f0e2dd17779fc3bbbcb9a5ae07f228
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 10 14:46:24 2020 +0100
+
+    har legat till en regex för telefonNr validator
+
+commit 03a5439c2af6cf2767082698005bd93f02bcde87
+Merge: b6545c4 3cadfb7
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Mon Feb 10 14:34:31 2020 +0100
+
+    ajdå
+
+commit b6545c4eee24b57e227878ea5fa22f887c977f58
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Mon Feb 10 14:33:50 2020 +0100
+
+    upp med denna puss
+
+commit 3cadfb7febd7fe19c91f8958e5cd422513eca8bd
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Mon Feb 10 14:32:24 2020 +0100
+
+    Lagt till så att läsning läser in filen korrekt
+
+commit c0697ecb99c2487e154f34efebe26c850edce217
+Merge: f978bf0 f1a2f1b
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Mon Feb 10 14:28:11 2020 +0100
+
+    vadpågår
+
+commit f1a2f1b162b4042bff83f48c289e7e165c3085da
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 10 14:20:41 2020 +0100
+
+    uppdaterade contact
+
+commit f978bf0f639a9c3d52b04eec6b68fe8e3157aff0
+Merge: 887ee7e a12dbce
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Mon Feb 10 14:19:41 2020 +0100
+
+    Merge branch 'master' of https://github.com/plidoodo/elerif
+
+commit 887ee7ed6df6c6bb4904fd8724171ec6ab6d8a54
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Mon Feb 10 14:07:40 2020 +0100
+
+    update
+
+commit a12dbce0419f736c0f5d79b6f177b0ed464acc04
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Mon Feb 10 13:53:56 2020 +0100
+
+    lagt till några metodanrop från lagringspaketet
+
+commit bcdc407f38bf3eb677d974975af7218d5eaf64b7
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Mon Feb 10 13:52:54 2020 +0100
+
+    lägg till ny contacts.txt
+
+commit 8fd06040add52c5ffdc3bfd7ee845ec1408410dc
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Mon Feb 10 13:48:12 2020 +0100
+
+    Lagring lagrar nu ContactBook i .txt-fil
+
+commit 2bf77c48894658d99582e870973523c1d57b8d95
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 10 13:45:33 2020 +0100
+
+    Skapade en validator metod för mejl och telefon
+
+commit c630872e0cce4bec2c03536c95d8f9fbce71b301
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Mon Feb 10 13:23:04 2020 +0100
+
+    fortsatta uppdateringar till uit
+
+commit 5bdba4b2542f815a01047b0638f8139cc9c5253c
+Merge: 4b71a32 89257ff
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Mon Feb 10 13:14:19 2020 +0100
+
+    Merge branch 'master' of https://github.com/plidoodo/elerif
+
+commit 4b71a32fe6a0d6d9e15505893ef0ae2c4ac61b0f
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Mon Feb 10 13:13:46 2020 +0100
+
+    anpassa metoder i lagring och läsning efter resten av projektet
+
+commit 89257ff4365ca7b765b379a7c09bdadd92e9458b
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Mon Feb 10 11:54:46 2020 +0100
+
+    Uppdateringar i uit
+
+commit d6b69cd0e9581c3a6b8ef7c171909474fe3222cc
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Mon Feb 10 11:34:21 2020 +0100
+
+    uppdatera addContactToFile-metoden
+
+commit e9960f7ad94ff4db4f99ad935244f772c36e8a1d
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Mon Feb 10 11:29:46 2020 +0100
+
+    Lite mer ui
+
+commit b1251e87e88b8bb6e5ee0fc19d86fa41654c988a
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Mon Feb 10 11:26:24 2020 +0100
+
+    skapa klass för inläsning av textfil
+
+commit 195514b091225197b68a828bf634d4ab540d488b
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Mon Feb 10 11:19:30 2020 +0100
+
+    ändrar ui till JTabbed
+
+commit cabdfb3c61886be2b9a6b07b0b1d6defa53ffd24
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Mon Feb 10 11:03:13 2020 +0100
+
+    Fixar till Uit
+
+commit 48302b949d07f0c4b40f2fb864470f9330ae3941
+Author: plidoodo <blixtdackhammar@gmail.com>
+Date:   Mon Feb 10 10:57:48 2020 +0100
+
+    skapa addContactToFile-metod
+
+commit 75b212c87df47fc32fd84673ca6406eb140bf534
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 10 10:53:11 2020 +0100
+
+    ändrade to print i contact
+
+commit 39970d5e1be004b00ed76a4ffe4e0372d22c149b
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 10 10:44:40 2020 +0100
+
+    tog bort printmetoden
+
+commit 93b08c28b5115dc61a61ec71d633a03d6147431a
+Merge: bb97485 33d0ff2
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Mon Feb 10 09:55:38 2020 +0100
+
+    tjänare
+
+commit 33d0ff206821c052d65c834e17cc9e8c404a4c78
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 10 09:50:39 2020 +0100
+
+    Skapade resources folder och contacts.txt åt Erik
+
+commit bb31bbf645789c825c59f5e1cb4354da8f9d3589
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 10 09:28:05 2020 +0100
+
+    Uppdaterade metoder så att de användar findPosition metoden
+
+commit 2e3f0ffa45227506fbd7ad00dc40d69140cc9c3f
+Author: Elske <e.muijderman@gmail.com>
+Date:   Mon Feb 10 09:13:49 2020 +0100
+
+    skapade contactnotfoundexception
+
+commit bb9748555f0c37a3de92859805d16e0b6a6e0f99
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Sun Feb 9 23:27:27 2020 +0100
+
+    FiLeR
+
+commit 72c1a3cbef87ff59f8faa719fa14570627498fa9
+Author: Elske <e.muijderman@gmail.com>
+Date:   Sun Feb 9 21:40:08 2020 +0100
+
+    Skrev några test till
+
+commit 5d88ce010e146f74dac659c2d7965fbce79ec933
+Author: Elske <e.muijderman@gmail.com>
+Date:   Sun Feb 9 21:16:41 2020 +0100
+
+    Skrev färdigt alla metoder som behövs i domänobjekt, skrev några tester
+
+commit c50f01b1b9713729519486a7edb11b0b2e855831
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Sun Feb 9 13:49:47 2020 +0100
+
+    GUI är inte färdigt puss
+
+commit 3a204ffcc4d7df81b8b53cc8afad60fed9f42ad7
+Author: Elske <e.muijderman@gmail.com>
+Date:   Sun Feb 9 13:45:30 2020 +0100
+
+    Skapade delecteContact metod och började med att skriva första JUnit tester
+
+commit 58822173ec4ab6eaf6f225acbff0ec0e82ec861f
+Author: Elske <e.muijderman@gmail.com>
+Date:   Sun Feb 9 13:05:23 2020 +0100
+
+    Skapade comparator klassen till contact och har lagt till sorteringsmetoden i contactbook klassen
+
+commit 780e6f1e64f91d8db30c76d16cbaa77f21ff0302
+Author: Elske <e.muijderman@gmail.com>
+Date:   Fri Feb 7 22:19:23 2020 +0100
+
+    skapade en konstruktorn till
+
+commit 483a2e57691692902d3c53c5e555dbc2b803343f
+Author: Elske <e.muijderman@gmail.com>
+Date:   Fri Feb 7 22:17:12 2020 +0100
+
+    Ändrade add contact metoden och hitta position
+
+commit fa6e6d7d68cea0101d4651dbd02da388bd65ddfa
+Author: Elske <e.muijderman@gmail.com>
+Date:   Fri Feb 7 21:18:48 2020 +0100
+
+    skapade sök metoden
+
+commit 032fbaf4b6e5baec20fc363d80a8910e2742a15b
+Author: Elske <e.muijderman@gmail.com>
+Date:   Fri Feb 7 20:17:39 2020 +0100
+
+    Ändrade telnr från int to string, och fixade print funktion
+
+commit 0c5bfe216e2ce14456188571120f435afbdebe79
+Author: Elske <e.muijderman@gmail.com>
+Date:   Fri Feb 7 14:53:27 2020 +0100
+
+    första stegen med contact och contactbook
+
+commit af4b0556e6d4a5c886665dceff0425f752b881da
+Author: Aoife Tjärnlund <tjarnlunda@gmail.com>
+Date:   Fri Feb 7 14:50:31 2020 +0100
+
+    Början på ett skal på ett UI, under konstruktion
+
+commit 7691f892ee08578531db58011b7694c8bde45b20
+Author: Elske <e.muijderman@gmail.com>
+Date:   Fri Feb 7 13:19:55 2020 +0100
+
+    added classes to folders, names can be refactored later
+
+commit e686f9c4a700d09cb97a551a9aee3371cf23a37c
+Author: Elske <e.muijderman@gmail.com>
+Date:   Fri Feb 7 13:15:48 2020 +0100
+
+    updatet git ignore
+
+commit 8fb038af7c7f61b156f55a58cb078836bea288e3
+Author: Elske <e.muijderman@gmail.com>
+Date:   Fri Feb 7 13:12:14 2020 +0100
+
+    added .gitignorefile
+
+commit e10cc9fbb9f92c416cd24a95f2558429c445a91a
+Author: Elske <e.muijderman@gmail.com>
+Date:   Fri Feb 7 13:00:12 2020 +0100
+
+    här vi kör igen
+
+commit e99a0cabfc9611ed919024a922a563895f761361
+Author: AoifeTjarnlund <48285350+AoifeTjarnlund@users.noreply.github.com>
+Date:   Fri Feb 7 11:32:27 2020 +0100
+
+    Delete org.eclipse.m2e.core.prefs
+
+commit 50a1a4330e8b284c51acf185b51ffd6ddc30e795
+Author: AoifeTjarnlund <48285350+AoifeTjarnlund@users.noreply.github.com>
+Date:   Fri Feb 7 11:32:18 2020 +0100
+
+    Delete org.eclipse.jdt.core.prefs
+
+commit 01b0f23d015b9849e02ac120b876b9e24575240c
+Author: AoifeTjarnlund <48285350+AoifeTjarnlund@users.noreply.github.com>
+Date:   Fri Feb 7 11:32:03 2020 +0100
+
+    Delete pom.xml
+
+commit 8051dcb1c6ea32fac21093564a92c885a6810637
+Author: AoifeTjarnlund <48285350+AoifeTjarnlund@users.noreply.github.com>
+Date:   Fri Feb 7 11:31:48 2020 +0100
+
+    Delete .project
+
+commit bfd3fe28ea9f46b4882a9e5ee5163fd82f855aa1
+Author: AoifeTjarnlund <48285350+AoifeTjarnlund@users.noreply.github.com>
+Date:   Fri Feb 7 11:31:35 2020 +0100
+
+    Delete .gitignore
+
+commit b48d27a602f53f8bda604dc79da01df7d50ea8f4
+Author: AoifeTjarnlund <48285350+AoifeTjarnlund@users.noreply.github.com>
+Date:   Fri Feb 7 11:31:24 2020 +0100
+
+    Delete .classpath
+
+commit def78a39c846b8639478e844d4859670a035665d
+Author: elske <e.muijderman@gmail.com>
+Date:   Fri Feb 7 11:09:31 2020 +0100
+
+    commit eclipse projekt
+
+commit 73063145dec8a9542832eaec8ce8b4d7f99225f9
+Author: plidoodo <56875990+plidoodo@users.noreply.github.com>
+Date:   Tue Feb 4 10:36:24 2020 +0100
+
+    Initial commit

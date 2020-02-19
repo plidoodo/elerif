@@ -1,5 +1,8 @@
 package ui;
 
+
+// UI-author = Aoife
+
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -61,6 +64,7 @@ public class Ui extends JFrame {
 	JLabel m2 = new JLabel("E-mail: ", SwingConstants.CENTER);
 	JLabel varning = new JLabel("Please enter the exact name, e-mail or phonenumber!", SwingConstants.CENTER);
 	JLabel error = new JLabel("The contact cannot be found");
+	JLabel incorrect = new JLabel("* couldn't be updated because of incorrect format!");	
 	JTextField namn = new JTextField(15);
 	JTextField namn2 = new JTextField(15);
 	JTextField mejl = new JTextField(15);
@@ -87,6 +91,7 @@ public class Ui extends JFrame {
 
 		tabOne.add(save2);
 		tabOne.add(cancel2);
+		
 //		Sparar kontakt
 		save2.addActionListener(e -> {
 			if (contactbook.addContactToList(c.createContact(namn2.getText(), mejl2.getText(), telNr2.getText()))) {
@@ -131,6 +136,7 @@ public class Ui extends JFrame {
 		tabThree.add(updateContact);
 		tabThree.add(deleteContact);
 		tabThree.add(scroll);
+		tabThree.add(incorrect);
 
 //		Detta är rutan som kommer upp när man trycker på update
 		update.setContentPane(update2);
@@ -186,7 +192,7 @@ public class Ui extends JFrame {
 				listModel.addAll(contactbook.getContacts());
 			}
 		});
-//		avslutar utan att spar ändringar
+//		avslutar utan att spara ändringar
 		cancel.addActionListener(e -> {
 			update.dispose();
 		});
