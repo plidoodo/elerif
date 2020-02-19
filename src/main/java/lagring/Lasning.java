@@ -9,17 +9,25 @@ import java.util.List;
 
 import doman.Contact;
 
+	/**
+	 * @author Erik Blixt Dackhammar
+	 */
 
 public class Lasning {
 
+	/**
+	 * Laddar in en serialiserade objekt och returnerar en Lista
+	 * av kontakter.
+	 * @param Tar ett filnamn som parameter.
+	 * @return Returnerar en Lista  av deserialiserade Contact-objekt.
+	 */
 	
-	
-	public List<Contact> loadFromFile() {
+	public List<Contact> loadFromFile(String filename) {
 		
 		List<Contact> contacts = new ArrayList<>();
 		try
         {
-            FileInputStream fis = new FileInputStream("contact.txt");
+            FileInputStream fis = new FileInputStream(filename);
             ObjectInputStream ois = new ObjectInputStream(fis);
  
             contacts = (List<Contact>) ois.readObject();
@@ -28,26 +36,7 @@ public class Lasning {
             fis.close();
         } 
 		catch (FileNotFoundException fne) {
-//			try {
-//				FileInputStream fis = new FileInputStream("src//main//resources//contact.txt");
-//	            ObjectInputStream ois = new ObjectInputStream(fis);
-//	 
-//	            contacts = (List<Contact>) ois.readObject();
-//	 
-//	            ois.close();
-//	            fis.close();
-//				
-//			}
-//			catch (FileNotFoundException fne2) {
-//				fne2.printStackTrace();
-//			}
-//			catch (IOException e) {
-//				e.printStackTrace();
-//			}
-//			catch (ClassNotFoundException ce) {
-//				ce.printStackTrace();
-//			}
-//			
+			
 		}
         catch (IOException ioe) 
         {

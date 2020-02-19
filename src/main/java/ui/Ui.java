@@ -95,7 +95,7 @@ public class Ui extends JFrame {
 //		Sparar kontakt
 		save2.addActionListener(e -> {
 			if (contactbook.addContactToList(c.createContact(namn2.getText(), mejl2.getText(), telNr2.getText()))) {
-				lagring.addToFile(contactbook);
+				lagring.addToFile(contactbook, "contact.txt");
 				listModel.clear();
 				listModel.addAll(contactbook.getContacts());
 				JOptionPane.showMessageDialog(null, "Contact added");
@@ -173,7 +173,7 @@ public class Ui extends JFrame {
 				ContactNotFoundException.printStackTrace();
 			} finally {
 				update.dispose();
-				lagring.addToFile(contactbook);
+				lagring.addToFile(contactbook, "contact.txt");
 			}
 
 			listModel.clear();
@@ -187,7 +187,7 @@ public class Ui extends JFrame {
 			} else {
 				Contact con = (Contact) list.getSelectedValue();
 				contactbook.deleteContact(con);
-				lagring.addToFile(contactbook);
+				lagring.addToFile(contactbook, "contact.txt");
 				listModel.clear();
 				listModel.addAll(contactbook.getContacts());
 			}

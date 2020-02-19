@@ -16,7 +16,7 @@ public class ContactBook {
 	 */
 	public ContactBook() {
 		Lasning s = new Lasning();
-		this.contacts = s.loadFromFile();
+		this.contacts = s.loadFromFile("contact.txt");
 	}
 
 	/**
